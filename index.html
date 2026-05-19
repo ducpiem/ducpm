@@ -26,8 +26,8 @@
     }
 
     body {
-      background-color: #0b0f19; /* ĐÃ CẬP NHẬT: Nền tối xám xanh sâu cực sang */
-      color: #ffffff; /* Chữ trắng nổi bật */
+      background-color: #0b0f19;
+      color: #ffffff;
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       display: flex;
       justify-content: center;
@@ -38,7 +38,7 @@
       overflow-x: hidden;
     }
 
-    /* --- HIỆU ỨNG LIQUID NỀN CHUYỂN ĐỘNG (TÔNG TỐI) --- */
+    /* --- HIỆU ỨNG LIQUID NỀN CHUYỂN ĐỘNG --- */
     .liquid-bg-container {
       position: fixed;
       top: 0;
@@ -70,7 +70,6 @@
       100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }
     }
 
-    /* Lớp tuyết phủ tràn lên trên menu */
     #bg-particles {
       position: fixed;
       top: 0;
@@ -81,14 +80,14 @@
       pointer-events: none;
     }
 
-    /* --- ĐÃ CẬP NHẬT: KHUNG MENU TỐI TRONG SUỐT SIÊU ĐẸP (GLASSMORPHISM DARK) --- */
+    /* --- KHUNG MENU TỐI TRONG SUỐT --- */
     .bio-wrapper {
       width: 100%;
       max-width: 540px;
-      background: rgba(15, 23, 42, 0.45); /* Nền tối trong suốt, nhìn thấu các khối màu chạy phía sau */
+      background: rgba(15, 23, 42, 0.45);
       backdrop-filter: blur(35px) saturate(180%);
       -webkit-backdrop-filter: blur(35px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.08); /* Viền kính mờ tinh tế */
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 32px;
       padding: 40px 24px;
       text-align: center;
@@ -111,29 +110,12 @@
     }
 
     .avatar-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
-    
-    .profile-name { 
-      font-size: 1.75rem; 
-      font-weight: 700; 
-      letter-spacing: -0.5px; 
-      margin-bottom: 8px; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      gap: 8px;
-      color: #ffffff;
-    }
-    
-    .profile-desc { 
-      font-size: 1rem; 
-      color: #94a3b8; 
-      line-height: 1.5; 
-      margin-bottom: 36px; 
-      font-weight: 400; 
-    }
+    .profile-name { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #ffffff; }
+    .profile-desc { font-size: 1rem; color: #94a3b8; line-height: 1.5; margin-bottom: 36px; font-weight: 400; }
 
     .links-list { display: flex; flex-direction: column; gap: 18px; }
     
+    /* Cấu trúc dòng thông thường */
     .bio-item {
       display: flex;
       align-items: center;
@@ -146,6 +128,56 @@
       position: relative;
     }
 
+    /* --- CẤU TRÚC ĐẶC BIỆT CHO HÀNG TIKTOK ĐỂ CHỨA NÚT PHỤ --- */
+    .tiktok-row-container {
+      display: flex;
+      align-items: center;
+      gap: 12px; /* Khoảng cách giữa nút to và nút nhỏ */
+      width: 100%;
+    }
+    .tiktok-main-btn {
+      flex-grow: 1; /* Nút TikTok chính tự động chiếm hết khoảng trống bên trái */
+    }
+
+    /* --- NÚT PHỤ "CỬA HÀNG" PHÁT SÁNG CHÚ Ý --- */
+    .tiktok-shop-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 78px; /* Tương đương chiều cao của nút lớn */
+      border-radius: 20px;
+      text-decoration: none;
+      /* Dải màu chuyển sắc Neon kết nối giữa TikTok và Shopee */
+      background: linear-gradient(135deg, #00f2fe 0%, #fe0979 100%);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0; /* Giữ nguyên kích thước không bị móp */
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+      transition: all 0.3s ease;
+      position: relative;
+      animation: neonPulse 2s infinite ease-in-out; /* Hiệu ứng nhấp nháy thu hút chú ý */
+    }
+
+    .tiktok-shop-badge i {
+      font-size: 1.3rem;
+      margin-bottom: 4px;
+    }
+
+    .tiktok-shop-badge:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 0 25px rgba(254, 9, 121, 0.8);
+    }
+
+    /* Hiệu ứng nhịp tim phát sáng (Pulse) liên tục */
+    @keyframes neonPulse {
+      0% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 4px rgba(254, 9, 121, 0.3); }
+      50% { box-shadow: 0 0 22px rgba(0, 242, 254, 0.8), 0 0 12px rgba(254, 9, 121, 0.6); transform: scale(1.02); }
+      100% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 4px rgba(254, 9, 121, 0.3); }
+    }
+
     .icon-circle {
       width: 52px; height: 52px; border-radius: 50%; background: #ffffff;
       display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;
@@ -156,16 +188,13 @@
     .text-block { flex-grow: 1; padding-right: 52px; text-align: center; }
     .title-main { font-size: 1.05rem; font-weight: 600; color: #ffffff; }
 
-    /* --- HIỆU ỨNG GRADIENT CỦA CÁC NÚT --- */
+    /* --- THEMES NÚT --- */
     .momo-theme { background: linear-gradient(135deg, rgba(216,0,115,0.85) 0%, rgba(165,0,100,0.85) 100%); }
     .momo-theme:hover { transform: translateY(-3px); border-color: rgba(216, 0, 115, 0.6); box-shadow: 0 12px 30px rgba(216, 0, 115, 0.45); }
-    
     .paypal-theme { background: linear-gradient(135deg, rgba(0,121,193,0.85) 0%, rgba(0,69,124,0.85) 100%); }
     .paypal-theme:hover { transform: translateY(-3px); border-color: rgba(0, 121, 193, 0.6); box-shadow: 0 12px 30px rgba(0, 121, 193, 0.45); }
-    
     .facebook-theme { background: linear-gradient(135deg, #1877F2 0%, #0d5ca7 100%); }
     .facebook-theme:hover { transform: translateY(-3px); border-color: rgba(24, 119, 242, 0.6); box-shadow: 0 12px 30px rgba(24, 119, 242, 0.45); }
-    
     .tpbank-theme { background: linear-gradient(135deg, #51247b 0%, #ea5b0c 100%); }
     .tpbank-theme:hover { transform: translateY(-3px); border-color: rgba(234, 91, 12, 0.6); box-shadow: 0 12px 30px rgba(81, 36, 123, 0.6); }
     
@@ -174,15 +203,13 @@
     
     .shopee-theme { background: linear-gradient(135deg, rgba(255,87,34,0.85) 0%, rgba(238,77,45,0.85) 100%); }
     .shopee-theme:hover { transform: translateY(-3px); border-color: rgba(255, 87, 34, 0.6); box-shadow: 0 12px 30px rgba(255, 87, 34, 0.45); }
-    
     .bmac-theme { background: linear-gradient(135deg, #FFDD00 0%, #F4C430 100%); }
     .bmac-theme .title-main { color: #111111; }
     .bmac-theme:hover { transform: translateY(-3px); border-color: rgba(255, 221, 0, 0.8); box-shadow: 0 12px 30px rgba(255, 221, 0, 0.5); }
-    
     .github-theme { background: linear-gradient(135deg, rgba(71,85,105,0.85) 0%, rgba(51,65,85,0.85) 100%); }
     .github-theme:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 12px 30px rgba(71, 85, 105, 0.45); }
 
-    /* --- TRÌNH PHÁT NHẠC FIXED BOTTOM (DẠNG KÍNH MỜ TỐI) --- */
+    /* --- TRÌNH PHÁT NHẠC --- */
     .music-sticky-player {
       position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 460px;
       background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -221,6 +248,8 @@
       .text-block { padding-right: 44px; }
       .title-main { font-size: 0.95rem; }
       .music-sticky-player { bottom: 16px; padding: 10px 14px; }
+      .tiktok-row-container { gap: 8px; }
+      .tiktok-shop-badge { width: 62px; height: 72px; font-size: 0.65rem; border-radius: 16px; }
     }
   </style>
 </head>
@@ -264,12 +293,19 @@
         <div class="text-block"><div class="title-main">TPBank</div></div>
       </a>
 
-      <a href="https://www.tiktok.com/@ducpm92" class="bio-item tiktok-theme" target="_blank">
-        <div class="icon-circle" style="background: linear-gradient(45deg, #00f2fe, #fe0979); box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);">
-          <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
-        </div>
-        <div class="text-block"><div class="title-main" style="text-shadow: 0 0 6px rgba(0, 242, 254, 0.5);">TikTok</div></div>
-      </a>
+      <div class="tiktok-row-container">
+        <a href="https://www.tiktok.com/@ducpm92" class="bio-item tiktok-theme tiktok-main-btn" target="_blank">
+          <div class="icon-circle" style="background: linear-gradient(45deg, #00f2fe, #fe0979); box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);">
+            <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
+          </div>
+          <div class="text-block"><div class="title-main" style="text-shadow: 0 0 6px rgba(0, 242, 254, 0.5);">TikTok</div></div>
+        </a>
+        
+        <a href="https://vt.tiktok.com/ZS9YBkaFskqpX-Iqrmb/" class="tiktok-shop-badge" title="Trưng bày sản phẩm" target="_blank">
+          <i class="fa-solid fa-store"></i>
+          <span>Shop</span>
+        </a>
+      </div>
 
       <a href="https://collshp.com/linhkstorefront?view=storefront" class="bio-item shopee-theme" target="_blank">
         <div class="icon-circle"><i class="fa-solid fa-bag-shopping" style="color: #ee4d2d;"></i></div>
@@ -355,12 +391,10 @@
       playMusic();
     });
 
-    /* --- ĐÃ CẬP NHẬT: HIỆU ỨNG TUYẾT RƠI LOÃNG VÀ NHẸ NHÀNG --- */
+    /* --- HIỆU ỨNG TUYẾT RƠI LOÃNG VÀ NHẸ NHÀNG --- */
     const canvas = document.getElementById('bg-particles');
     const ctx = canvas.getContext('2d');
     let particlesArray = [];
-    
-    // ĐÃ GIẢM: Hạ số lượng xuống 45 hạt để tạo độ loãng, thanh thoát, không rối mắt
     const numberOfParticles = 45; 
 
     function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
@@ -371,11 +405,9 @@
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        // Kích thước vừa phải (từ 1.0px đến 3.2px) tự nhiên
         this.size = Math.random() * 2.2 + 1.0; 
         this.speedX = Math.random() * 0.3 - 0.15;
-        this.speedY = Math.random() * 0.5 + 0.2; // Tốc độ rơi chậm rãi thư thái
-        // Độ mờ hạt nhẹ nhàng ẩn hiện trên nền tối cực đẹp
+        this.speedY = Math.random() * 0.5 + 0.2; 
         this.opacity = Math.random() * 0.35 + 0.25;
       }
       update() {
