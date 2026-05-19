@@ -1,231 +1,467 @@
-1
-00:00:00,300 --> 00:00:03,200
-Secure 2 hollow metal tubes
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta name="p:domain_verify" content="2fc84808d25a1917 nudge_content_78d25a1917d0b77c0ec2b70a52"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Pham Duc 🎉</title>
+  <meta name="description" content="Pham Duc" />
+  <meta property="og:title" content="Support Pham Duc 🎉" />
+  <meta property="og:description" content="Duc Pham " />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ducpiem.github.io/ducpm/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/ducpiem/ducpm/refs/heads/ducpiem/avatar.jpg" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-2
-00:00:03,200 --> 00:00:06,366
-to a torch lighter w/ electrical tape.
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-3
-00:00:06,366 --> 00:00:09,166
-Insert a small bent staple wire inside.
+    body {
+      background-color: #060913;
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px 100px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-4
-00:00:09,166 --> 00:00:10,166
-Torch the wire tip
+    /* --- HIỆU ỨNG LIQUID GLASS NỀN CHUYỂN ĐỘNG --- */
+    .liquid-bg-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
 
-5
-00:00:10,166 --> 00:00:11,200
-until it glows red hot.
+    .liquid-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      mix-blend-mode: screen;
+      opacity: 0.25;
+      animation: floatFluid 25s infinite alternate ease-in-out;
+    }
 
-6
-00:00:11,200 --> 00:00:15,100
-Now use it to weld & repair broken plastic parts.
+    .blob-1 {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, #617efc 0%, rgba(0,0,0,0) 70%);
+      top: -10%;
+      left: -10%;
+      animation-duration: 20s;
+    }
 
-7
-00:00:17,900 --> 00:00:21,200
-Wrap a thick copper wire around a screwdriver.
+    .blob-2 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #d80073 0%, rgba(0,0,0,0) 70%);
+      bottom: -15%;
+      right: -10%;
+      animation-duration: 28s;
+    }
 
-8
-00:00:21,266 --> 00:00:23,600
-Then attach it to a torch lighter.
+    .blob-3 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #00f2fe 0%, rgba(0,0,0,0) 70%);
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-duration: 24s;
+    }
 
-9
-00:00:23,666 --> 00:00:27,633
-Heat it up to make a simple DIY soldering gun.
+    @keyframes floatFluid {
+      0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+      33% { transform: translate(40px, -60px) scale(1.1) rotate(120deg); }
+      66% { transform: translate(-30px, 30px) scale(0.9) rotate(240deg); }
+      100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }
+    }
 
-10
-00:00:27,666 --> 00:00:30,666
-It works perfectly as an emergency tool
+    #bg-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
 
-11
-00:00:30,766 --> 00:00:34,500
-to quickly fill or weld small plastic gaps.
+    /* --- KHUNG CHỨA KÍNH MỜ LIQUID GLASS TỐI --- */
+    .bio-wrapper {
+      width: 100%;
+      max-width: 540px;
+      background: rgba(10, 17, 32, 0.45);
+      backdrop-filter: blur(35px) saturate(180%);
+      -webkit-backdrop-filter: blur(35px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 32px;
+      padding: 40px 24px;
+      text-align: center;
+      box-shadow: 
+        0 24px 80px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 1;
+    }
 
-12
-00:00:36,766 --> 00:00:40,066
-What if your USB charging cable gets frayed?
+    .avatar-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px auto;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      padding: 4px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
 
-13
-00:00:40,066 --> 00:00:42,466
-Slide a piece of heat shrink tubing over it.
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
-14
-00:00:42,466 --> 00:00:45,766
-Cover both the plug body & the wires together
+    .profile-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
 
-15
-00:00:45,766 --> 00:00:48,500
-to bridge them back into a single unit.
+    .profile-desc {
+      font-size: 1rem;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
 
-16
-00:00:48,533 --> 00:00:50,766
-Shrink it down w/ heat.
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
 
-17
-00:00:50,766 --> 00:01:53,900
-The cable will look & function like new.
+    .bio-item {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      text-decoration: none;
+      border-radius: 50px;
+      padding: 12px 14px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      position: relative;
+    }
 
-18
-00:01:55,566 --> 00:00:57,700
-If you don't have heat shrink tubing,
+    .icon-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
 
-19
-00:00:57,700 --> 00:01:01,333
-fold a cord in half & place it over the tear.
+    .bio-item:hover .icon-circle {
+      transform: rotate(6deg) scale(1.05);
+    }
 
-20
-00:01:01,333 --> 00:01:03,966
-Wrap it tightly around the damaged area.
+    .text-block {
+      flex-grow: 1;
+      padding-right: 52px;
+      text-align: center;
+    }
 
-21
-00:01:03,966 --> 00:01:07,100
-Think of it like bandaging a small wound.
+    .title-main {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
 
-22
-00:01:07,100 --> 00:01:11,233
-Tying it off secures a clean emergency repair.
+    /* --- BRAND THEMES --- */
+    .momo-theme { background: linear-gradient(135deg, rgba(216,0,115,0.85) 0%, rgba(165,0,100,0.85) 100%); }
+    .momo-theme:hover { transform: translateY(-3px); border-color: rgba(216, 0, 115, 0.6); box-shadow: 0 12px 30px rgba(216, 0, 115, 0.45); }
 
-23
-00:01:14,500 --> 00:01:17,533
-Alternatively, find a small metal compression spring
+    .paypal-theme { background: linear-gradient(135deg, rgba(0,121,193,0.85) 0%, rgba(0,69,124,0.85) 100%); }
+    .paypal-theme:hover { transform: translateY(-3px); border-color: rgba(0, 121, 193, 0.6); box-shadow: 0 12px 30px rgba(0, 121, 193, 0.45); }
 
-24
-00:01:17,533 --> 00:01:18,466
-w/ a matching diameter.
+    .facebook-theme { background: linear-gradient(135deg, #1877F2 0%, #0d5ca7 100%); }
+    .facebook-theme:hover { transform: translateY(-3px); border-color: rgba(24, 119, 242, 0.6); box-shadow: 0 12px 30px rgba(24, 119, 242, 0.45); }
 
-25
-00:01:18,566 --> 00:01:21,266
-Slowly twist & roll it onto the cable end.
+    .tpbank-theme { background: linear-gradient(135deg, #51247b 0%, #ea5b0c 100%); }
+    .tpbank-theme:hover { transform: translateY(-3px); border-color: rgba(234, 91, 12, 0.6); box-shadow: 0 12px 30px rgba(81, 36, 123, 0.6); }
 
-26
-00:01:21,266 --> 00:01:24,233
-The tension & flexibility of the spring
+    .tiktok-theme { background: linear-gradient(135deg, #121824 0%, #1a2333 100%); border: 1px solid rgba(0, 242, 254, 0.3); }
+    .tiktok-theme:hover { transform: translateY(-3px); border-color: rgba(254, 9, 121, 0.7); box-shadow: 0 12px 30px rgba(0, 242, 254, 0.35); }
 
-27
-00:01:24,266 --> 00:01:27,600
-prevents the inner wires from breaking over time.
+    .shopee-theme { background: linear-gradient(135deg, rgba(255,87,34,0.85) 0%, rgba(238,77,45,0.85) 100%); }
+    .shopee-theme:hover { transform: translateY(-3px); border-color: rgba(255, 87, 34, 0.6); box-shadow: 0 12px 30px rgba(255, 87, 34, 0.45); }
 
-28
-00:01:27,766 --> 00:01:31,200
-Finish by wrapping a layer of electrical tape over it
+    .bmac-theme { background: linear-gradient(135deg, #FFDD00 0%, #F4C430 100%); }
+    .bmac-theme .title-main { color: #111111; }
+    .bmac-theme:hover { transform: translateY(-3px); border-color: rgba(255, 221, 0, 0.8); box-shadow: 0 12px 30px rgba(255, 221, 0, 0.5); }
 
-29
-00:01:31,200 --> 00:01:33,666
-for extra insulation & structural protection.
+    .github-theme { background: linear-gradient(135deg, rgba(71,85,105,0.85) 0%, rgba(51,65,85,0.85) 100%); }
+    .github-theme:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 12px 30px rgba(71, 85, 105, 0.45); }
 
-30
-00:01:35,200 --> 00:01:38,166
-When a machine's rubber O-ring breaks
+    /* --- STICKY PLAYER --- */
+    .music-sticky-player {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 460px;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+      z-index: 999;
+    }
 
-31
-00:01:38,166 --> 00:01:41,100
-& you don't have a spare replacement on hand,
+    .music-info-side { display: flex; align-items: center; gap: 12px; flex-grow: 1; overflow: hidden; }
+    .disc-container {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(45deg, #fe0979, #00f2fe);
+      display: flex; align-items: center; justify-content: center;
+      animation: spinDisc 4s linear infinite; animation-play-state: paused;
+    }
+    .disc-container.playing { animation-play-state: running; }
+    .disc-container i { color: #ffffff; font-size: 1.1rem; }
+    .track-details { display: flex; flex-direction: column; overflow: hidden; }
+    .track-title { font-size: 0.9rem; font-weight: 600; color: #ffffff; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+    .track-artist { font-size: 0.75rem; color: #94a3b8; }
+    .music-controls-side { display: flex; align-items: center; gap: 16px; }
 
-32
-00:01:41,100 --> 00:01:43,466
-slip a balloon neck right over the part.
+    .btn-play-pause {
+      width: 36px; height: 36px; border-radius: 50%; border: none;
+      background: #ffffff; color: #0f172a; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;
+    }
+    .btn-play-pause:hover { transform: scale(1.08); background: #00f2fe; }
 
-33
-00:01:43,466 --> 00:01:46,600
-Roll it up layer after layer into a tight ring.
+    @keyframes spinDisc { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-34
-00:01:46,700 --> 00:01:50,133
-Trim off the excess to fit the seal groove.
+    @media (max-width: 480px) {
+      body { padding: 20px 12px 90px 12px; }
+      .bio-wrapper { padding: 30px 16px; border-radius: 24px; }
+      .avatar-container { width: 105px; height: 105px; }
+      .profile-name { font-size: 1.5rem; }
+      .profile-desc { font-size: 0.9rem; margin-bottom: 28px; }
+      .icon-circle { width: 44px; height: 44px; font-size: 1.25rem; }
+      .text-block { padding-right: 44px; }
+      .title-main { font-size: 0.95rem; }
+      .music-sticky-player { bottom: 16px; padding: 10px 14px; }
+    }
+  </style>
+</head>
+<body>
 
-35
-00:01:50,133 --> 00:01:51,300
-For low-precision hardware
+  <div class="liquid-bg-container">
+    <div class="liquid-blob blob-1"></div>
+    <div class="liquid-blob blob-2"></div>
+    <div class="liquid-blob blob-3"></div>
+  </div>
 
-36
-00:01:51,300 --> 00:01:54,466
-or non-critical temporary tools,
+  <canvas id="bg-particles"></canvas>
 
-37
-00:01:54,466 --> 00:01:56,566
-this quick emergency hack
+  <div class="bio-wrapper">
+    <div class="profile-header">
+      <div class="avatar-container">
+        <img src="https://raw.githubusercontent.com/ducpiem/ducpm/refs/heads/ducpiem/avatar.jpg" alt="Pham Duc" class="avatar-img">
+      </div>
+      <h1 class="profile-name">Pham Duc <span>🎉</span></h1>
+      <p class="profile-desc">DONATE WITH</p>
+    </div>
 
-38
-00:01:56,566 --> 00:01:59,033
-works as an excellent temporary seal gasket.
+    <div class="links-list">
+      <a href="https://me.momo.vn/ducpm" class="bio-item momo-theme" target="_blank">
+        <div class="icon-circle"><i class="fa-solid fa-wallet" style="color: #a50064;"></i></div>
+        <div class="text-block"><div class="title-main">Momo</div></div>
+      </a>
 
-39
-00:02:00,066 --> 00:02:02,500
-When installing a brand new O-ring,
+      <a href="https://www.paypal.me/ducthanhdbp" class="bio-item paypal-theme" target="_blank">
+        <div class="icon-circle"><i class="fa-brands fa-paypal" style="color: #00457c;"></i></div>
+        <div class="text-block"><div class="title-main">PayPal</div></div>
+      </a>
 
-40
-00:02:02,533 --> 00:02:05,566
-forcing it into tight spots w/ fingers is hard.
+      <a href="https://fb.com/ducpmmk" class="bio-item facebook-theme" target="_blank">
+        <div class="icon-circle"><i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i></div>
+        <div class="text-block"><div class="title-main">Facebook</div></div>
+      </a>
 
-41
-00:02:05,566 --> 00:02:07,700
-Loop a small piece of string through it instead.
+      <a href="https://img.vietqr.io/image/tpb-22229658888-compact2.jpg?accountName=PHAM%20MINH%20DUC&addInfo=Donate" class="bio-item tpbank-theme" target="_blank">
+        <div class="icon-circle"><i class="fa-solid fa-credit-card" style="color: #51247b;"></i></div>
+        <div class="text-block"><div class="title-main">TPBank</div></div>
+      </a>
 
-42
-00:02:07,700 --> 00:02:09,600
-Using the tension of the string,
+      <a href="https://www.tiktok.com/@ducpm92" class="bio-item tiktok-theme" target="_blank">
+        <div class="icon-circle" style="background: linear-gradient(45deg, #00f2fe, #fe0979); box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);">
+          <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
+        </div>
+        <div class="text-block"><div class="title-main" style="text-shadow: 0 0 6px rgba(0, 242, 254, 0.5);">TikTok</div></div>
+      </a>
 
-43
-00:02:09,600 --> 00:02:13,200
-you can easily pull & seat it into the groove.
+      <a href="https://collshp.com/linhkstorefront?view=storefront" class="bio-item shopee-theme" target="_blank">
+        <div class="icon-circle"><i class="fa-solid fa-bag-shopping" style="color: #ee4d2d;"></i></div>
+        <div class="text-block"><div class="title-main">Shopee</div></div>
+      </a>
 
-44
-00:02:14,200 --> 00:02:17,933
-Bend the tines of an old fork to match the strike plate.
+      <a href="https://www.buymeacoffee.com/ducpiem" class="bio-item bmac-theme" target="_blank">
+        <div class="icon-circle"><i class="fa-solid fa-mug-hot" style="color: #FFDD00; text-shadow: 0px 0px 2px rgba(0,0,0,0.8);"></i></div>
+        <div class="text-block"><div class="title-main">Coffee</div></div>
+      </a>
 
-45
-00:02:17,933 --> 00:02:21,766
-Close the door & slip the fork handle horizontally through it.
+      <a href="https://github.com/ducpiem" class="bio-item github-theme" target="_blank">
+        <div class="icon-circle"><i class="fa-brands fa-github" style="color: #181717;"></i></div>
+        <div class="text-block"><div class="title-main">GitHub</div></div>
+      </a>
+    </div>
+  </div>
 
-46
-00:02:21,800 --> 00:02:25,400
-It creates a rock-solid, mechanical deadbolt lock
+  <div class="music-sticky-player">
+    <div class="music-info-side">
+      <div class="disc-container" id="music-disc"><i class="fa-solid fa-music"></i></div>
+      <div class="track-details">
+        <span class="track-title" id="track-name">Lo-Fi Beats & Chill</span>
+        <span class="track-artist">Chill Music</span>
+      </div>
+    </div>
+    <div class="music-controls-side">
+      <button class="btn-play-pause" id="play-btn" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
+    </div>
+    
+    <audio id="main-audio" src="https://cf-media.sndcdn.com/wdHt1OUT76tA.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vd2RIdDFPVVQ3NnRBLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzc5MjA0NTkwfX19XX0_&Signature=Bsqw0HkPCR-JukLjUhlWpH3DLdyk4mGqKKUhG4m-it4LXWU6HRusQSAlKUSpPVI81Asq-0ajB4D7nYtpzoFHPPp5Q8X4z1ziDVCt9F0oFeEufdL2uRgkgqdVq~x4Bo4RaiPQIMXES3dTzaTDrhuNsq-1gf2BwjbIgx5zmTBvZDhMQhJCWTMRromLCoIAuCX6NYZZbtSmVsAK92U6KmxEyyEP5-pN52zqubRPoMg6YSpNEj6EgKKtRuHJS9G7UUZKCtRJdqVy9Y3gyn8y3atGKTro8R41cy2CjUrbd5r-LM9qAa9DYo37HWROOk3g8eRuT7FG7TCGP31G~Okk~WSq8Q__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ" loop></audio>
+  </div>
 
-47
-00:02:25,400 --> 00:02:27,666
-to effectively secure your privacy anywhere.
+  <script>
+    const audio = document.getElementById('main-audio');
+    const playBtn = document.getElementById('play-btn');
+    const disc = document.getElementById('music-disc');
 
-48
-00:02:28,933 --> 00:02:29,500
-Be careful:
+    let isMusicStarted = false;
 
-49
-00:02:29,500 --> 00:02:33,300
-cranking a heavily rusted faucet w/ a wrench can snap it.
+    function playMusic() {
+      if (isMusicStarted) return;
+      audio.volume = 0.4;
+      audio.play().then(() => {
+        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        disc.classList.add('playing');
+        isMusicStarted = true;
+        removeInteractionListeners();
+      }).catch(err => {
+        console.log("Autoplay vẫn đang chờ tương tác từ người dùng.");
+      });
+    }
 
-50
-00:02:33,300 --> 00:02:35,633
-Wrap a strong rope around the body instead.
+    function togglePlay(e) {
+      if(e) e.stopPropagation(); 
+      if (audio.paused) {
+        audio.play().then(() => {
+          playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+          disc.classList.add('playing');
+          isMusicStarted = true;
+        });
+      } else {
+        audio.pause();
+        playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+        disc.classList.remove('playing');
+      }
+    }
 
-51
-00:02:35,700 --> 00:02:38,700
-Insert an iron pry bar to create a makeshift lever.
+    playBtn.addEventListener('click', togglePlay);
 
-52
-00:02:38,933 --> 00:02:41,733
-This distributes torque evenly across the fixture,
+    // BẮT SỰ KIỆN TƯƠNG TÁC TOÀN TRANG ĐỂ KÍCH HOẠT NHẠC
+    function addInteractionListeners() {
+      window.addEventListener('click', playMusic, { passive: true });
+      window.addEventListener('touchstart', playMusic, { passive: true });
+      window.addEventListener('scroll', playMusic, { passive: true });
+    }
 
-53
-00:02:41,733 --> 00:02:43,966
-preventing it from cracking or fracturing.
+    function removeInteractionListeners() {
+      window.removeEventListener('click', playMusic);
+      window.removeEventListener('touchstart', playMusic);
+      window.removeEventListener('scroll', playMusic);
+    }
 
-54
-00:02:45,100 --> 00:02:45,900
-Lastly,
+    // Chạy ngay khi tải trang để cố gắng phát (nếu trình duyệt lỏng lẻo)
+    window.addEventListener('DOMContentLoaded', () => {
+      addInteractionListeners();
+      playMusic();
+    });
 
-55
-00:02:45,933 --> 00:02:49,266
-mount floor tape rolls directly onto a paint roller frame.
+    // --- HIỆU ỨNG HẠT TINH THỂ NỀN CHUYỂN ĐỘNG ---
+    const canvas = document.getElementById('bg-particles');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    const numberOfParticles = 35;
 
-56
-00:02:49,266 --> 00:02:52,533
-It is effortless to glide & easy to track straight.
+    function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    setCanvasSize();
+    window.addEventListener('resize', setCanvasSize);
 
-57
-00:02:52,533 --> 00:02:55,200
-This completely eliminates the annoyance
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 1.8 + 0.4;
+        this.speedX = Math.random() * 0.3 - 0.15;
+        this.speedY = Math.random() * 0.4 + 0.1;
+        this.opacity = Math.random() * 0.4 + 0.15;
+      }
+      update() {
+        this.x += this.speedX; this.y -= this.speedY;
+        if (this.y < 0) { this.y = canvas.height; this.x = Math.random() * canvas.width; }
+        if (this.x > canvas.width || this.x < 0) { this.speedX = -this.speedX; }
+      }
+      draw() {
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+      }
+    }
 
-58
-00:02:55,200 --> 00:02:57,866
-of laying down crooked, messy tape lines.
+    function init() { for (let i = 0; i < numberOfParticles; i++) { particlesArray.push(new Particle()); } }
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); particlesArray[i].draw(); }
+      requestAnimationFrame(animate);
+    }
+    init(); animate();
+  </script>
+</body>
+</html>
