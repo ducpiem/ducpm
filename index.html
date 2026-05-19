@@ -33,7 +33,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 40px 20px 100px 20px; /* Thêm khoảng trống ở dưới để không bị thanh nhạc che */
+      padding: 40px 20px 100px 20px;
       position: relative;
       overflow-x: hidden;
     }
@@ -218,19 +218,19 @@
     }
 
     /* 2. PayPal */
-    .paypal-theme { background: linear-gradient(135deg, rgba(0,121,193,0.85) 0%, rgba(0,69,124,0.85) 100%); }
+    .paypal-theme { background: linear-gradient(135deg, #00457c 0%, #0079c1 100%); }
     .paypal-theme:hover {
       transform: translateY(-3px);
-      border-color: rgba(0, 121, 193, 0.6);
-      box-shadow: 0 12px 30px rgba(0, 121, 193, 0.45);
+      border-color: rgba(0, 121, 193, 0.7);
+      box-shadow: 0 12px 30px rgba(0, 121, 193, 0.5);
     }
 
     /* 3. Facebook */
-    .facebook-theme { background: linear-gradient(135deg, rgba(234,88,12,0.85) 0%, rgba(194,65,12,0.85) 100%); }
+    .facebook-theme { background: linear-gradient(135deg, #1877F2 0%, #0d5ca7 100%); }
     .facebook-theme:hover {
       transform: translateY(-3px);
-      border-color: rgba(234, 88, 12, 0.6);
-      box-shadow: 0 12px 30px rgba(234, 88, 12, 0.45);
+      border-color: rgba(24, 119, 242, 0.7);
+      box-shadow: 0 12px 30px rgba(24, 119, 242, 0.5);
     }
 
     /* 4. TikTok Cyber Glow */
@@ -252,7 +252,7 @@
       box-shadow: 0 12px 30px rgba(255, 87, 34, 0.45);
     }
 
-    /* ĐÃ SỬA: 6. Coffee đổi hẳn sang màu vàng rực rỡ thương hiệu */
+    /* 6. Coffee */
     .bmac-theme { background: linear-gradient(135deg, #FFDD00 0%, #F4C430 100%); }
     .bmac-theme .title-main { color: #111111; }
     .bmac-theme:hover {
@@ -413,16 +413,16 @@
         <div class="text-block"><div class="title-main">PayPal</div></div>
       </a>
 
-      <a href="https://fb.com/ducpmmk" class="bio-item facebook-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i></div>
-        <div class="text-block"><div class="title-main">Facebook</div></div>
-      </a>
-
       <a href="https://www.tiktok.com/@ducpm92" class="bio-item tiktok-theme" target="_blank">
         <div class="icon-circle" style="background: linear-gradient(45deg, #00f2fe, #fe0979); box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);">
           <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
         </div>
         <div class="text-block"><div class="title-main" style="text-shadow: 0 0 6px rgba(0, 242, 254, 0.5);">TikTok</div></div>
+      </a>
+
+      <a href="https://fb.com/ducpmmk" class="bio-item facebook-theme" target="_blank">
+        <div class="icon-circle"><i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i></div>
+        <div class="text-block"><div class="title-main">Facebook</div></div>
       </a>
 
       <a href="https://collshp.com/linhkstorefront?view=storefront" class="bio-item shopee-theme" target="_blank">
@@ -432,7 +432,7 @@
 
       <a href="https://www.buymeacoffee.com/ducpiem" class="bio-item bmac-theme" target="_blank">
         <div class="icon-circle"><i class="fa-solid fa-mug-hot" style="color: #FFDD00; text-shadow: 0px 0px 2px rgba(0,0,0,0.8);"></i></div>
-        <div class="text-block"><div class="title-main">Coffee</div></div>
+        <div class="text-block"><div class="title-main">buymeacoffee</div></div>
       </a>
 
       <a href="https://github.com/ducpiem" class="bio-item github-theme" target="_blank">
@@ -488,7 +488,7 @@
     playBtn.addEventListener('click', togglePlay);
 
     window.addEventListener('DOMContentLoaded', () => {
-      audio.volume = 0.4; // Âm lượng 40% mượt mà
+      audio.volume = 0.4;
       const autoPlayPromise = audio.play();
       if (autoPlayPromise !== undefined) {
         autoPlayPromise.then(() => {
