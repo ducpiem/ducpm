@@ -26,8 +26,8 @@
     }
 
     body {
-      background-color: #eef4f8; /* ĐÃ CẬP NHẬT: Đổi từ nền đen sang nền sáng Pastel */
-      color: #1e293b; /* Đổi màu chữ mặc định sang màu tối để dễ đọc */
+      background-color: #0b0f19; /* ĐÃ CẬP NHẬT: Nền tối xám xanh sâu cực sang */
+      color: #ffffff; /* Chữ trắng nổi bật */
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       display: flex;
       justify-content: center;
@@ -38,7 +38,7 @@
       overflow-x: hidden;
     }
 
-    /* --- HIỆU ỨNG LIQUID GLASS NỀN CHUYỂN ĐỘNG (DẠNG SÁNG) --- */
+    /* --- HIỆU ỨNG LIQUID NỀN CHUYỂN ĐỘNG (TÔNG TỐI) --- */
     .liquid-bg-container {
       position: fixed;
       top: 0;
@@ -53,24 +53,24 @@
     .liquid-blob {
       position: absolute;
       border-radius: 50%;
-      filter: blur(70px);
-      mix-blend-mode: multiply; /* Hòa trộn kiểu sáng */
-      opacity: 0.22;
+      filter: blur(80px);
+      mix-blend-mode: screen;
+      opacity: 0.24;
       animation: floatFluid 25s infinite alternate ease-in-out;
     }
 
-    .blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, #4f46e5 0%, rgba(255,255,255,0) 70%); top: -10%; left: -10%; animation-duration: 20s; }
-    .blob-2 { width: 550px; height: 550px; background: radial-gradient(circle, #ec4899 0%, rgba(255,255,255,0) 70%); bottom: -15%; right: -10%; animation-duration: 28s; }
-    .blob-3 { width: 400px; height: 400px; background: radial-gradient(circle, #06b6d4 0%, rgba(255,255,255,0) 70%); top: 35%; left: 45%; transform: translate(-50%, -50%); animation-duration: 24s; }
+    .blob-1 { width: 450px; height: 450px; background: radial-gradient(circle, #4f46e5 0%, rgba(0,0,0,0) 70%); top: -10%; left: -10%; animation-duration: 20s; }
+    .blob-2 { width: 500px; height: 500px; background: radial-gradient(circle, #ec4899 0%, rgba(0,0,0,0) 70%); bottom: -15%; right: -10%; animation-duration: 28s; }
+    .blob-3 { width: 380px; height: 380px; background: radial-gradient(circle, #00f2fe 0%, rgba(0,0,0,0) 70%); top: 40%; left: 50%; transform: translate(-50%, -50%); animation-duration: 24s; }
 
     @keyframes floatFluid {
       0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
-      33% { transform: translate(50px, -50px) scale(1.15) rotate(120deg); }
-      66% { transform: translate(-40px, 40px) scale(0.9) rotate(240deg); }
+      33% { transform: translate(40px, -60px) scale(1.1) rotate(120deg); }
+      66% { transform: translate(-30px, 30px) scale(0.9) rotate(240deg); }
       100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }
     }
 
-    /* Hiệu ứng hạt tuyết phủ tràn lên thực đơn */
+    /* Lớp tuyết phủ tràn lên trên menu */
     #bg-particles {
       position: fixed;
       top: 0;
@@ -81,20 +81,20 @@
       pointer-events: none;
     }
 
-    /* --- ĐÃ CẬP NHẬT: KHUNG MENU TRONG SUỐT SIÊU ĐẸP (GLASSMORPHISM LIGHT) --- */
+    /* --- ĐÃ CẬP NHẬT: KHUNG MENU TỐI TRONG SUỐT SIÊU ĐẸP (GLASSMORPHISM DARK) --- */
     .bio-wrapper {
       width: 100%;
       max-width: 540px;
-      background: rgba(255, 255, 255, 0.28); /* Độ trong suốt rất cao, thấy rõ nền phía sau */
-      backdrop-filter: blur(30px) saturate(190%);
-      -webkit-backdrop-filter: blur(30px) saturate(190%);
-      border: 1px solid rgba(255, 255, 255, 0.5); /* Viền sáng như pha lê */
+      background: rgba(15, 23, 42, 0.45); /* Nền tối trong suốt, nhìn thấu các khối màu chạy phía sau */
+      backdrop-filter: blur(35px) saturate(180%);
+      -webkit-backdrop-filter: blur(35px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.08); /* Viền kính mờ tinh tế */
       border-radius: 32px;
       padding: 40px 24px;
       text-align: center;
       box-shadow: 
-        0 20px 50px rgba(31, 45, 65, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        0 24px 80px rgba(0, 0, 0, 0.55),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
       position: relative;
       z-index: 1;
     }
@@ -104,10 +104,10 @@
       width: 120px;
       height: 120px;
       margin: 0 auto 20px auto;
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 50%;
       padding: 4px;
-      box-shadow: 0 8px 24px rgba(31, 45, 65, 0.12);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
 
     .avatar-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
@@ -121,15 +121,15 @@
       align-items: center; 
       justify-content: center; 
       gap: 8px;
-      color: #0f172a;
+      color: #ffffff;
     }
     
     .profile-desc { 
-      font-size: 0.9rem; 
-      color: #64748b; 
-      letter-spacing: 1px;
+      font-size: 1rem; 
+      color: #94a3b8; 
+      line-height: 1.5; 
       margin-bottom: 36px; 
-      font-weight: 600; 
+      font-weight: 400; 
     }
 
     .links-list { display: flex; flex-direction: column; gap: 18px; }
@@ -142,74 +142,72 @@
       border-radius: 50px;
       padding: 12px 14px;
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.04);
       position: relative;
     }
 
     .icon-circle {
       width: 52px; height: 52px; border-radius: 50%; background: #ffffff;
       display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06); transition: transform 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease;
     }
 
     .bio-item:hover .icon-circle { transform: rotate(6deg) scale(1.05); }
     .text-block { flex-grow: 1; padding-right: 52px; text-align: center; }
-    
-    /* Chữ trên nút chỉnh thành màu trắng để nổi bật trên các dải màu Gradient */
     .title-main { font-size: 1.05rem; font-weight: 600; color: #ffffff; }
 
-    /* --- ĐỒNG BỘ ĐỘ MỜ GRADIENT CỦA CÁC NÚT THƯƠNG HIỆU --- */
-    .momo-theme { background: linear-gradient(135deg, rgba(216,0,115,0.9) 0%, rgba(165,0,100,0.9) 100%); }
-    .momo-theme:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(216, 0, 115, 0.35); }
+    /* --- HIỆU ỨNG GRADIENT CỦA CÁC NÚT --- */
+    .momo-theme { background: linear-gradient(135deg, rgba(216,0,115,0.85) 0%, rgba(165,0,100,0.85) 100%); }
+    .momo-theme:hover { transform: translateY(-3px); border-color: rgba(216, 0, 115, 0.6); box-shadow: 0 12px 30px rgba(216, 0, 115, 0.45); }
     
-    .paypal-theme { background: linear-gradient(135deg, rgba(0,121,193,0.9) 0%, rgba(0,69,124,0.9) 100%); }
-    .paypal-theme:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0, 121, 193, 0.35); }
+    .paypal-theme { background: linear-gradient(135deg, rgba(0,121,193,0.85) 0%, rgba(0,69,124,0.85) 100%); }
+    .paypal-theme:hover { transform: translateY(-3px); border-color: rgba(0, 121, 193, 0.6); box-shadow: 0 12px 30px rgba(0, 121, 193, 0.45); }
     
-    .facebook-theme { background: linear-gradient(135deg, rgba(24,119,242,0.9) 0%, rgba(13,92,167,0.9) 100%); }
-    .facebook-theme:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(24, 119, 242, 0.35); }
+    .facebook-theme { background: linear-gradient(135deg, #1877F2 0%, #0d5ca7 100%); }
+    .facebook-theme:hover { transform: translateY(-3px); border-color: rgba(24, 119, 242, 0.6); box-shadow: 0 12px 30px rgba(24, 119, 242, 0.45); }
     
-    .tpbank-theme { background: linear-gradient(135deg, rgba(81,36,123,0.95) 0%, rgba(234,91,12,0.95) 100%); }
-    .tpbank-theme:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(81, 36, 123, 0.4); }
+    .tpbank-theme { background: linear-gradient(135deg, #51247b 0%, #ea5b0c 100%); }
+    .tpbank-theme:hover { transform: translateY(-3px); border-color: rgba(234, 91, 12, 0.6); box-shadow: 0 12px 30px rgba(81, 36, 123, 0.6); }
     
-    .tiktok-theme { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid rgba(15, 23, 42, 0.1); }
-    .tiktok-theme:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25); }
+    .tiktok-theme { background: linear-gradient(135deg, #121824 0%, #1a2333 100%); border: 1px solid rgba(0, 242, 254, 0.3); }
+    .tiktok-theme:hover { transform: translateY(-3px); border-color: rgba(254, 9, 121, 0.7); box-shadow: 0 12px 30px rgba(0, 242, 254, 0.35); }
     
-    .shopee-theme { background: linear-gradient(135deg, rgba(255,87,34,0.9) 0%, rgba(238,77,45,0.9) 100%); }
-    .shopee-theme:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(255, 87, 34, 0.35); }
+    .shopee-theme { background: linear-gradient(135deg, rgba(255,87,34,0.85) 0%, rgba(238,77,45,0.85) 100%); }
+    .shopee-theme:hover { transform: translateY(-3px); border-color: rgba(255, 87, 34, 0.6); box-shadow: 0 12px 30px rgba(255, 87, 34, 0.45); }
     
-    .bmac-theme { background: linear-gradient(135deg, #ffdd00 0%, #f4c430 100%); }
-    .bmac-theme .title-main { color: #1e293b; }
-    .bmac-theme:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(244, 196, 48, 0.5); }
+    .bmac-theme { background: linear-gradient(135deg, #FFDD00 0%, #F4C430 100%); }
+    .bmac-theme .title-main { color: #111111; }
+    .bmac-theme:hover { transform: translateY(-3px); border-color: rgba(255, 221, 0, 0.8); box-shadow: 0 12px 30px rgba(255, 221, 0, 0.5); }
     
-    .github-theme { background: linear-gradient(135deg, #475569 0%, #334155 100%); }
-    .github-theme:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(71, 85, 105, 0.35); }
+    .github-theme { background: linear-gradient(135deg, rgba(71,85,105,0.85) 0%, rgba(51,65,85,0.85) 100%); }
+    .github-theme:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 12px 30px rgba(71, 85, 105, 0.45); }
 
-    /* --- TRÌNH PHÁT NHẠC FIXED BOTTOM (DẠNG SÁNG TRONG SUỐT) --- */
+    /* --- TRÌNH PHÁT NHẠC FIXED BOTTOM (DẠNG KÍNH MỜ TỐI) --- */
     .music-sticky-player {
       position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 460px;
-      background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(20px) saturate(170%); -webkit-backdrop-filter: blur(20px) saturate(170%);
-      border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 24px; padding: 12px 20px;
-      display: flex; align-items: center; justify-content: space-between; box-shadow: 0 10px 35px rgba(31, 45, 65, 0.06);
+      background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 12px 20px;
+      display: flex; align-items: center; justify-content: space-between; box-shadow: 0 16px 40px rgba(0,0,0,0.5);
       z-index: 1000;
     }
 
     .music-info-side { display: flex; align-items: center; gap: 12px; flex-grow: 1; overflow: hidden; }
     .disc-container {
-      width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg, #6366f1, #06b6d4);
+      width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg, #fe0979, #00f2fe);
       display: flex; align-items: center; justify-content: center; animation: spinDisc 4s linear infinite; animation-play-state: paused;
     }
     .disc-container.playing { animation-play-state: running; }
     .disc-container i { color: #ffffff; font-size: 1.1rem; }
     .track-details { display: flex; flex-direction: column; overflow: hidden; }
-    .track-title { font-size: 0.9rem; font-weight: 600; color: #0f172a; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-    .track-artist { font-size: 0.75rem; color: #64748b; }
+    .track-title { font-size: 0.9rem; font-weight: 600; color: #ffffff; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+    .track-artist { font-size: 0.75rem; color: #94a3b8; }
     .music-controls-side { display: flex; align-items: center; gap: 16px; }
 
     .btn-play-pause {
-      width: 36px; height: 36px; border-radius: 50%; border: none; background: #0f172a; color: #ffffff;
+      width: 36px; height: 36px; border-radius: 50%; border: none; background: #ffffff; color: #0f172a;
       display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;
     }
-    .btn-play-pause:hover { transform: scale(1.08); background: #6366f1; }
+    .btn-play-pause:hover { transform: scale(1.08); background: #00f2fe; }
 
     @keyframes spinDisc { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
@@ -218,7 +216,7 @@
       .bio-wrapper { padding: 30px 16px; border-radius: 24px; }
       .avatar-container { width: 105px; height: 105px; }
       .profile-name { font-size: 1.5rem; }
-      .profile-desc { font-size: 0.85rem; margin-bottom: 28px; }
+      .profile-desc { font-size: 0.9rem; margin-bottom: 28px; }
       .icon-circle { width: 44px; height: 44px; font-size: 1.25rem; }
       .text-block { padding-right: 44px; }
       .title-main { font-size: 0.95rem; }
@@ -267,10 +265,10 @@
       </a>
 
       <a href="https://www.tiktok.com/@ducpm92" class="bio-item tiktok-theme" target="_blank">
-        <div class="icon-circle" style="background: #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-          <i class="fa-brands fa-tiktok" style="color: #111111;"></i>
+        <div class="icon-circle" style="background: linear-gradient(45deg, #00f2fe, #fe0979); box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);">
+          <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
         </div>
-        <div class="text-block"><div class="title-main">TikTok</div></div>
+        <div class="text-block"><div class="title-main" style="text-shadow: 0 0 6px rgba(0, 242, 254, 0.5);">TikTok</div></div>
       </a>
 
       <a href="https://collshp.com/linhkstorefront?view=storefront" class="bio-item shopee-theme" target="_blank">
@@ -279,7 +277,7 @@
       </a>
 
       <a href="https://www.buymeacoffee.com/ducpiem" class="bio-item bmac-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-solid fa-mug-hot" style="color: #ffdd00; text-shadow: 0px 0px 1px rgba(0,0,0,0.3);"></i></div>
+        <div class="icon-circle"><i class="fa-solid fa-mug-hot" style="color: #FFDD00; text-shadow: 0px 0px 2px rgba(0,0,0,0.8);"></i></div>
         <div class="text-block"><div class="title-main">Coffee</div></div>
       </a>
 
@@ -305,7 +303,7 @@
   </div>
 
   <script>
-    /* --- LOGIC PHÁT NHẠC TỰ ĐỘNG KHI CHẠM MÀN HÌNH --- */
+    /* --- LOGIC PHÁT NHẠC --- */
     const audio = document.getElementById('main-audio');
     const playBtn = document.getElementById('play-btn');
     const disc = document.getElementById('music-disc');
@@ -314,13 +312,13 @@
 
     function playMusic() {
       if (isMusicStarted) return;
-      audio.volume = 0.3;
+      audio.volume = 0.4;
       audio.play().then(() => {
         playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
         disc.classList.add('playing');
         isMusicStarted = true;
         removeInteractionListeners();
-      }).catch(err => { console.log("Chờ người dùng tương tác..."); });
+      }).catch(err => { console.log("Chờ tương tác..."); });
     }
 
     function togglePlay(e) {
@@ -357,11 +355,13 @@
       playMusic();
     });
 
-    /* --- HIỆU ỨNG TUYẾT RƠI DÀY PHỦ TRÊN MẶT KÍNH MENU --- */
+    /* --- ĐÃ CẬP NHẬT: HIỆU ỨNG TUYẾT RƠI LOÃNG VÀ NHẸ NHÀNG --- */
     const canvas = document.getElementById('bg-particles');
     const ctx = canvas.getContext('2d');
     let particlesArray = [];
-    const numberOfParticles = 110; 
+    
+    // ĐÃ GIẢM: Hạ số lượng xuống 45 hạt để tạo độ loãng, thanh thoát, không rối mắt
+    const numberOfParticles = 45; 
 
     function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
     setCanvasSize();
@@ -371,11 +371,12 @@
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 3.0 + 1.2; 
-        this.speedX = Math.random() * 0.4 - 0.2;
-        this.speedY = Math.random() * 0.6 + 0.3;
-        // Đổi màu hạt tuyết xám trắng nhẹ để nổi bật trên cả nền sáng
-        this.opacity = Math.random() * 0.4 + 0.45;
+        // Kích thước vừa phải (từ 1.0px đến 3.2px) tự nhiên
+        this.size = Math.random() * 2.2 + 1.0; 
+        this.speedX = Math.random() * 0.3 - 0.15;
+        this.speedY = Math.random() * 0.5 + 0.2; // Tốc độ rơi chậm rãi thư thái
+        // Độ mờ hạt nhẹ nhàng ẩn hiện trên nền tối cực đẹp
+        this.opacity = Math.random() * 0.35 + 0.25;
       }
       update() {
         this.x += this.speedX; 
@@ -387,7 +388,7 @@
         if (this.x > canvas.width || this.x < 0) { this.speedX = -this.speedX; }
       }
       draw() {
-        ctx.fillStyle = `rgba(220, 230, 242, ${this.opacity})`; /* Màu hạt trắng xanh tuyết */
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`; 
         ctx.beginPath(); 
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); 
         ctx.fill();
