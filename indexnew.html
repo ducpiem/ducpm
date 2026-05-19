@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta name="p:domain_verify" content="2fc84808d25a1917d0b77c0ec2b70a52"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Pham Duc 🎉</title>
+  <meta name="description" content="Pham Duc is making OSS libraries and sharing technical knowledge on Viblo.asia" />
+  <meta property="og:title" content="Support Pham Duc 🎉" />
+  <meta property="og:description" content="Duc Pham is making OSS libraries and sharing technical knowledge on Viblo.asia" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ducpiem.github.io/ducpm/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/ducpiem/-donate-page/ducpiem/card_name.png" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0b0f19;
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Hiệu ứng hình học nền lưới chéo lượn sóng và chấm bi hạt mịn giống như trong ảnh thiết kế */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(135deg, rgba(97, 126, 252, 0.05) 0%, transparent 50%),
+        linear-gradient(225deg, rgba(176, 0, 109, 0.05) 0%, transparent 50%);
+      background-size: 24px 24px, 100% 100%, 100% 100%;
+      background-position: 0 0, 0 0, 0 0;
+      z-index: -1;
+    }
+
+    /* Khung chứa Bio - Thiết kế tự động co giãn thông minh (Responsive) */
+    .bio-wrapper {
+      width: 100%;
+      max-width: 540px; /* Độ rộng tối đa chuẩn đẹp trên cả Desktop */
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 32px;
+      padding: 40px 24px;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    /* Avatar bọc viền và nền tròn trắng phía trên đỉnh chuẩn 100% như ảnh mẫu */
+    .avatar-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px auto;
+      background: #ffffff;
+      border-radius: 50%;
+      padding: 4px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .profile-desc {
+      font-size: 1rem;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+
+    /* Container bao các nút danh sách link */
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* Cấu trúc nút hình con nhộng bo tròn hai đầu dài vô cực cực đẹp */
+    .bio-item {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      text-decoration: none;
+      border-radius: 50px; /* Bo tròn hoàn toàn dạng capsule như ảnh */
+      padding: 12px 14px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .bio-item:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Vòng tròn chứa Icon bên trái nút */
+    .icon-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Khối chữ căn giữa trong nút */
+    .text-block {
+      flex-grow: 1;
+      padding-right: 52px; /* Đối trọng khoảng trống để tiêu đề dịch chuyển chính giữa nút */
+      text-align: center;
+    }
+
+    .title-main {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+
+    .title-sub {
+      font-size: 0.85rem;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    /* Phối màu gradient & text tương ứng chuẩn xác theo hình mẫu thiết kế gửi kèm */
+    
+    /* 1. Nút MoMo */
+    .momo-theme {
+      background: linear-gradient(135deg, #d80073 0%, #a50064 100%);
+    }
+    .momo-theme .title-sub { color: #ffd1e6; }
+
+    /* 2. Nút Buy Me A Coffee (BMAC) */
+    .bmac-theme {
+      background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    }
+    .bmac-theme .title-main { color: #0f172a; }
+    .bmac-theme .title-sub { color: #475569; }
+
+    /* 3. Nút PayPal */
+    .paypal-theme {
+      background: linear-gradient(135deg, #0079c1 0%, #00457c 100%);
+    }
+    .paypal-theme .title-sub { color: #bce4ff; }
+
+    /* 4. Nút GitHub */
+    .github-theme {
+      background: linear-gradient(135deg, #475569 0%, #334155 100%);
+    }
+    .github-theme .title-sub { color: #cbd5e1; }
+
+    /* 5. Nút Facebook */
+    .facebook-theme {
+      background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+    }
+    .facebook-theme .title-sub { color: #ffedd5; }
+
+    /* 6. Nút TikTok (Thêm mới theo yêu cầu) */
+    .tiktok-theme {
+      background: linear-gradient(135deg, #111827 0%, #000000 100%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .tiktok-theme .title-sub { color: #9ca3af; }
+
+
+    /* Tối ưu hóa phản hồi (Responsive Auto-Scale) cho từng thiết bị di động nhỏ/lớn & PC */
+    @media (max-width: 480px) {
+      body {
+        padding: 20px 12px;
+      }
+      .bio-wrapper {
+        padding: 30px 16px;
+        border-radius: 24px;
+      }
+      .avatar-container {
+        width: 105px;
+        height: 105px;
+      }
+      .profile-name {
+        font-size: 1.5rem;
+      }
+      .profile-desc {
+        font-size: 0.9rem;
+        margin-bottom: 28px;
+      }
+      .icon-circle {
+        width: 44px;
+        height: 44px;
+        font-size: 1.25rem;
+      }
+      .text-block {
+        padding-right: 44px;
+      }
+      .title-main {
+        font-size: 0.95rem;
+      }
+      .title-sub {
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bio-wrapper">
+    
+    <div class="profile-header">
+      <div class="avatar-container">
+        <img src="https://raw.githubusercontent.com/ducpiem/-donate-page/ducpiem/card_name.png" alt="Pham Duc" class="avatar-img">
+      </div>
+      <h1 class="profile-name">Pham Duc <span style="display:inline-block;">🎉</span></h1>
+      <p class="profile-desc">DONATE WITH</p>
+    </div>
+
+    <div class="links-list">
+
+      <a href="https://me.momo.vn/ducpm" class="bio-item momo-theme" target="_blank">
+        <div class="icon-circle">
+          <i class="fa-solid fa-wallet" style="color: #a50064;"></i>
+        </div>
+        <div class="text-block">
+          <div class="title-main">Momo</div>
+         
+        </div>
+      </a>
+
+      <a href="https://www.buymeacoffee.com/ducpiem" class="bio-item bmac-theme" target="_blank">
+        <div class="icon-circle">
+          <i class="fa-solid fa-mug-hot" style="color: #ffdd00; text-shadow: 0px 0px 1px #000;"></i>
+        </div>
+        <div class="text-block">
+          <div class="title-main">Coffee</div>
+        
+        </div>
+      </a>
+
+      <a href="https://www.paypal.me/ducpiem" class="bio-item paypal-theme" target="_blank">
+        <div class="icon-circle">
+          <i class="fa-brands fa-paypal" style="color: #00457c;"></i>
+        </div>
+        <div class="text-block">
+          <div class="title-main">PayPal</div>
+          
+        </div>
+      </a>
+
+      <a href="https://github.com/ducpiem" class="bio-item github-theme" target="_blank">
+        <div class="icon-circle">
+          <i class="fa-brands fa-github" style="color: #181717;"></i>
+        </div>
+        <div class="text-block">
+          <div class="title-main">GitHub</div>
+          
+        </div>
+      </a>
+
+      <a href="https://fb.com/ducpmmk" class="bio-item facebook-theme" target="_blank">
+        <div class="icon-circle">
+          <i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i>
+        </div>
+        <div class="text-block">
+          <div class="title-main">Facebook</div>
+          
+        </div>
+      </a>
+
+      <a href="https://www.tiktok.com/@ducpiem" class="bio-item tiktok-theme" target="_blank">
+        <div class="icon-circle">
+          <i class="fa-brands fa-tiktok" style="color: #000000;"></i>
+        </div>
+        <div class="text-block">
+          <div class="title-main">TikTok</div>
+          
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+</html>
