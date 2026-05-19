@@ -59,33 +59,9 @@
       animation: floatFluid 25s infinite alternate ease-in-out;
     }
 
-    .blob-1 {
-      width: 450px;
-      height: 450px;
-      background: radial-gradient(circle, #617efc 0%, rgba(0,0,0,0) 70%);
-      top: -10%;
-      left: -10%;
-      animation-duration: 20s;
-    }
-
-    .blob-2 {
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, #d80073 0%, rgba(0,0,0,0) 70%);
-      bottom: -15%;
-      right: -10%;
-      animation-duration: 28s;
-    }
-
-    .blob-3 {
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, #00f2fe 0%, rgba(0,0,0,0) 70%);
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation-duration: 24s;
-    }
+    .blob-1 { width: 450px; height: 450px; background: radial-gradient(circle, #617efc 0%, rgba(0,0,0,0) 70%); top: -10%; left: -10%; animation-duration: 20s; }
+    .blob-2 { width: 500px; height: 500px; background: radial-gradient(circle, #d80073 0%, rgba(0,0,0,0) 70%); bottom: -15%; right: -10%; animation-duration: 28s; }
+    .blob-3 { width: 350px; height: 350px; background: radial-gradient(circle, #00f2fe 0%, rgba(0,0,0,0) 70%); top: 40%; left: 50%; transform: translate(-50%, -50%); animation-duration: 24s; }
 
     @keyframes floatFluid {
       0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
@@ -94,13 +70,14 @@
       100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }
     }
 
+    /* ĐÃ CẬP NHẬT: Đưa lớp tuyết lên z-index: 2 để đè lên menu, chặn tương tác chuột để không lỗi click nút */
     #bg-particles {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: 2;
       pointer-events: none;
     }
 
@@ -119,7 +96,7 @@
         0 24px 80px rgba(0, 0, 0, 0.6),
         inset 0 1px 1px rgba(255, 255, 255, 0.1);
       position: relative;
-      z-index: 1;
+      z-index: 1; /* Thấp hơn lớp tuyết z-index: 2 */
     }
 
     .avatar-container {
@@ -133,38 +110,11 @@
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
 
-    .avatar-img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+    .avatar-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+    .profile-name { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .profile-desc { font-size: 1rem; color: #94a3b8; line-height: 1.5; margin-bottom: 36px; font-weight: 400; }
 
-    .profile-name {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .profile-desc {
-      font-size: 1rem;
-      color: #94a3b8;
-      line-height: 1.5;
-      margin-bottom: 36px;
-      font-weight: 400;
-    }
-
-    .links-list {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
+    .links-list { display: flex; flex-direction: column; gap: 18px; }
     .bio-item {
       display: flex;
       align-items: center;
@@ -178,88 +128,47 @@
     }
 
     .icon-circle {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
+      width: 52px; height: 52px; border-radius: 50%; background: #ffffff;
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease;
     }
 
-    .bio-item:hover .icon-circle {
-      transform: rotate(6deg) scale(1.05);
-    }
-
-    .text-block {
-      flex-grow: 1;
-      padding-right: 52px;
-      text-align: center;
-    }
-
-    .title-main {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #ffffff;
-    }
+    .bio-item:hover .icon-circle { transform: rotate(6deg) scale(1.05); }
+    .text-block { flex-grow: 1; padding-right: 52px; text-align: center; }
+    .title-main { font-size: 1.05rem; font-weight: 600; color: #ffffff; }
 
     /* --- BRAND THEMES --- */
     .momo-theme { background: linear-gradient(135deg, rgba(216,0,115,0.85) 0%, rgba(165,0,100,0.85) 100%); }
     .momo-theme:hover { transform: translateY(-3px); border-color: rgba(216, 0, 115, 0.6); box-shadow: 0 12px 30px rgba(216, 0, 115, 0.45); }
-
     .paypal-theme { background: linear-gradient(135deg, rgba(0,121,193,0.85) 0%, rgba(0,69,124,0.85) 100%); }
     .paypal-theme:hover { transform: translateY(-3px); border-color: rgba(0, 121, 193, 0.6); box-shadow: 0 12px 30px rgba(0, 121, 193, 0.45); }
-
     .facebook-theme { background: linear-gradient(135deg, #1877F2 0%, #0d5ca7 100%); }
     .facebook-theme:hover { transform: translateY(-3px); border-color: rgba(24, 119, 242, 0.6); box-shadow: 0 12px 30px rgba(24, 119, 242, 0.45); }
-
     .tpbank-theme { background: linear-gradient(135deg, #51247b 0%, #ea5b0c 100%); }
     .tpbank-theme:hover { transform: translateY(-3px); border-color: rgba(234, 91, 12, 0.6); box-shadow: 0 12px 30px rgba(81, 36, 123, 0.6); }
-
     .tiktok-theme { background: linear-gradient(135deg, #121824 0%, #1a2333 100%); border: 1px solid rgba(0, 242, 254, 0.3); }
     .tiktok-theme:hover { transform: translateY(-3px); border-color: rgba(254, 9, 121, 0.7); box-shadow: 0 12px 30px rgba(0, 242, 254, 0.35); }
-
     .shopee-theme { background: linear-gradient(135deg, rgba(255,87,34,0.85) 0%, rgba(238,77,45,0.85) 100%); }
     .shopee-theme:hover { transform: translateY(-3px); border-color: rgba(255, 87, 34, 0.6); box-shadow: 0 12px 30px rgba(255, 87, 34, 0.45); }
-
     .bmac-theme { background: linear-gradient(135deg, #FFDD00 0%, #F4C430 100%); }
     .bmac-theme .title-main { color: #111111; }
     .bmac-theme:hover { transform: translateY(-3px); border-color: rgba(255, 221, 0, 0.8); box-shadow: 0 12px 30px rgba(255, 221, 0, 0.5); }
-
     .github-theme { background: linear-gradient(135deg, rgba(71,85,105,0.85) 0%, rgba(51,65,85,0.85) 100%); }
     .github-theme:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 12px 30px rgba(71, 85, 105, 0.45); }
 
     /* --- STICKY PLAYER --- */
     .music-sticky-player {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: calc(100% - 40px);
-      max-width: 460px;
-      background: rgba(15, 23, 42, 0.55);
-      backdrop-filter: blur(20px) saturate(160%);
-      -webkit-backdrop-filter: blur(20px) saturate(160%);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
-      z-index: 999;
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 460px;
+      background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 12px 20px;
+      display: flex; align-items: center; justify-content: space-between; box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+      z-index: 1000; /* Cao nhất để điều khiển nhạc */
     }
 
     .music-info-side { display: flex; align-items: center; gap: 12px; flex-grow: 1; overflow: hidden; }
     .disc-container {
-      width: 42px; height: 42px; border-radius: 50%;
-      background: linear-gradient(45deg, #fe0979, #00f2fe);
-      display: flex; align-items: center; justify-content: center;
-      animation: spinDisc 4s linear infinite; animation-play-state: paused;
+      width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg, #fe0979, #00f2fe);
+      display: flex; align-items: center; justify-content: center; animation: spinDisc 4s linear infinite; animation-play-state: paused;
     }
     .disc-container.playing { animation-play-state: running; }
     .disc-container i { color: #ffffff; font-size: 1.1rem; }
@@ -269,9 +178,8 @@
     .music-controls-side { display: flex; align-items: center; gap: 16px; }
 
     .btn-play-pause {
-      width: 36px; height: 36px; border-radius: 50%; border: none;
-      background: #ffffff; color: #0f172a; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;
+      width: 36px; height: 36px; border-radius: 50%; border: none; background: #ffffff; color: #0f172a;
+      display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;
     }
     .btn-play-pause:hover { transform: scale(1.08); background: #00f2fe; }
 
@@ -365,11 +273,11 @@
     <div class="music-controls-side">
       <button class="btn-play-pause" id="play-btn" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
     </div>
-    
-    <audio id="main-audio" src="https://cf-media.sndcdn.com/wdHt1OUT76tA.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vd2RIdDFPVVQ3NnRBLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzc5MjA0NTkwfX19XX0_&Signature=Bsqw0HkPCR-JukLjUhlWpH3DLdyk4mGqKKUhG4m-it4LXWU6HRusQSAlKUSpPVI81Asq-0ajB4D7nYtpzoFHPPp5Q8X4z1ziDVCt9F0oFeEufdL2uRgkgqdVq~x4Bo4RaiPQIMXES3dTzaTDrhuNsq-1gf2BwjbIgx5zmTBvZDhMQhJCWTMRromLCoIAuCX6NYZZbtSmVsAK92U6KmxEyyEP5-pN52zqubRPoMg6YSpNEj6EgKKtRuHJS9G7UUZKCtRJdqVy9Y3gyn8y3atGKTro8R41cy2CjUrbd5r-LM9qAa9DYo37HWROOk3g8eRuT7FG7TCGP31G~Okk~WSq8Q__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ" loop></audio>
+    <audio id="main-audio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
   </div>
 
   <script>
+    /* --- LOGIC XỬ LÝ PLAY MUSIC --- */
     const audio = document.getElementById('main-audio');
     const playBtn = document.getElementById('play-btn');
     const disc = document.getElementById('music-disc');
@@ -384,9 +292,7 @@
         disc.classList.add('playing');
         isMusicStarted = true;
         removeInteractionListeners();
-      }).catch(err => {
-        console.log("Autoplay vẫn đang chờ tương tác từ người dùng.");
-      });
+      }).catch(err => { console.log("Chờ tương tác..."); });
     }
 
     function togglePlay(e) {
@@ -406,7 +312,6 @@
 
     playBtn.addEventListener('click', togglePlay);
 
-    // BẮT SỰ KIỆN TƯƠNG TÁC TOÀN TRANG ĐỂ KÍCH HOẠT NHẠC
     function addInteractionListeners() {
       window.addEventListener('click', playMusic, { passive: true });
       window.addEventListener('touchstart', playMusic, { passive: true });
@@ -419,17 +324,18 @@
       window.removeEventListener('scroll', playMusic);
     }
 
-    // Chạy ngay khi tải trang để cố gắng phát (nếu trình duyệt lỏng lẻo)
     window.addEventListener('DOMContentLoaded', () => {
       addInteractionListeners();
       playMusic();
     });
 
-    // --- HIỆU ỨNG HẠT TINH THỂ NỀN CHUYỂN ĐỘNG ---
+    /* --- ĐÃ CẠP NHẬT: HIỆU ỨNG TUYẾT RƠI DÀY VÀ RÕ, BAY TRÊN MENU --- */
     const canvas = document.getElementById('bg-particles');
     const ctx = canvas.getContext('2d');
     let particlesArray = [];
-    const numberOfParticles = 35;
+    
+    // Tăng số lượng bông tuyết từ 35 lên 110 để tuyết dày đặc và đẹp mắt hơn
+    const numberOfParticles = 110; 
 
     function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
     setCanvasSize();
@@ -439,19 +345,31 @@
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 1.8 + 0.4;
-        this.speedX = Math.random() * 0.3 - 0.15;
-        this.speedY = Math.random() * 0.4 + 0.1;
-        this.opacity = Math.random() * 0.4 + 0.15;
+        // Tăng kích thước hạt ngẫu nhiên (từ 1.2px đến 4.2px) giúp bông tuyết rõ hơn hẳn
+        this.size = Math.random() * 3.0 + 1.2; 
+        // Tốc độ bay chéo nhẹ nhàng
+        this.speedX = Math.random() * 0.4 - 0.2;
+        // Tốc độ rơi từ trên xuống dưới
+        this.speedY = Math.random() * 0.6 + 0.3;
+        // Tăng độ đậm/độ sáng trắng của tuyết (opacity tối thiểu là 0.4 và tối đa là 0.85)
+        this.opacity = Math.random() * 0.45 + 0.4;
       }
       update() {
-        this.x += this.speedX; this.y -= this.speedY;
-        if (this.y < 0) { this.y = canvas.height; this.x = Math.random() * canvas.width; }
+        this.x += this.speedX; 
+        this.y += this.speedY; // Đổi hướng sang rơi từ trên xuống dưới cho giống thực tế
+        
+        // Nếu rơi hết viền dưới màn hình thì hồi sinh lại ở trên đỉnh đầu
+        if (this.y > canvas.height) { 
+          this.y = -10; 
+          this.x = Math.random() * canvas.width; 
+        }
         if (this.x > canvas.width || this.x < 0) { this.speedX = -this.speedX; }
       }
       draw() {
         ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-        ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); 
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); 
+        ctx.fill();
       }
     }
 
