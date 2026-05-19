@@ -447,7 +447,7 @@
       <div class="disc-container" id="music-disc"><i class="fa-solid fa-music"></i></div>
       <div class="track-details">
         <span class="track-title" id="track-name">Đang tải giai điệu...</span>
-        <span class="track-artist">Background Chill Music</span>
+        <span class="track-artist">Chill Music</span>
       </div>
     </div>
     <div class="music-controls-side">
@@ -464,11 +464,11 @@
     const trackName = document.getElementById('track-name');
 
     audio.addEventListener('loadedmetadata', () => {
-      trackName.textContent = "Lo-Fi Coding Beats & Chill";
+      trackName.textContent = "Lo-Fi Beats & Chill";
     });
     setTimeout(() => {
       if(trackName.textContent.includes("Đang tải")) {
-        trackName.textContent = "Lo-Fi Coding Beats & Chill";
+        trackName.textContent = "Lo-Fi Beats & Chill";
       }
     }, 2000);
 
