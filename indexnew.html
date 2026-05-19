@@ -38,25 +38,33 @@
       overflow-x: hidden;
     }
 
-    /* Hiệu ứng hình học nền lưới chéo lượn sóng và chấm bi hạt mịn giống như trong ảnh thiết kế */
+    /* Hiệu ứng hạt nền */
+    #bg-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
     body::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background-image: 
-        radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(135deg, rgba(97, 126, 252, 0.05) 0%, transparent 50%),
-        linear-gradient(225deg, rgba(176, 0, 109, 0.05) 0%, transparent 50%);
+        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(135deg, rgba(97, 126, 252, 0.04) 0%, transparent 50%),
+        linear-gradient(225deg, rgba(176, 0, 109, 0.04) 0%, transparent 50%);
       background-size: 24px 24px, 100% 100%, 100% 100%;
-      background-position: 0 0, 0 0, 0 0;
-      z-index: -1;
+      z-index: -2;
     }
 
-    /* Khung chứa Bio - Thiết kế tự động co giãn thông minh (Responsive) */
     .bio-wrapper {
       width: 100%;
-      max-width: 540px; /* Độ rộng tối đa chuẩn đẹp trên cả Desktop */
-      background: rgba(15, 23, 42, 0.6);
+      max-width: 540px;
+      background: rgba(15, 23, 42, 0.65);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -65,9 +73,10 @@
       text-align: center;
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
       transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
     }
 
-    /* Avatar bọc viền và nền tròn trắng phía trên đỉnh chuẩn 100% như ảnh mẫu */
     .avatar-container {
       position: relative;
       width: 120px;
@@ -105,20 +114,18 @@
       font-weight: 400;
     }
 
-    /* Container bao các nút danh sách link */
     .links-list {
       display: flex;
       flex-direction: column;
       gap: 18px;
     }
 
-    /* Cấu trúc nút hình con nhộng bo tròn hai đầu dài vô cực cực đẹp */
     .bio-item {
       display: flex;
       align-items: center;
       width: 100%;
       text-decoration: none;
-      border-radius: 50px; /* Bo tròn hoàn toàn dạng capsule như ảnh */
+      border-radius: 50px;
       padding: 12px 14px;
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       border: 1px solid rgba(255, 255, 255, 0.05);
@@ -131,7 +138,6 @@
       border-color: rgba(255, 255, 255, 0.15);
     }
 
-    /* Vòng tròn chứa Icon bên trái nút */
     .icon-circle {
       width: 52px;
       height: 52px;
@@ -145,10 +151,9 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
-    /* Khối chữ căn giữa trong nút */
     .text-block {
       flex-grow: 1;
-      padding-right: 52px; /* Đối trọng khoảng trống để tiêu đề dịch chuyển chính giữa nút */
+      padding-right: 52px;
       text-align: center;
     }
 
@@ -156,94 +161,44 @@
       font-size: 1.05rem;
       font-weight: 600;
       color: #ffffff;
-      margin-bottom: 2px;
     }
 
-    .title-sub {
-      font-size: 0.85rem;
-      font-weight: 400;
-      opacity: 0.85;
-    }
-
-    /* Phối màu gradient & text tương ứng chuẩn xác theo hình mẫu thiết kế gửi kèm */
-    
-    /* 1. Nút MoMo */
-    .momo-theme {
-      background: linear-gradient(135deg, #d80073 0%, #a50064 100%);
-    }
-    .momo-theme .title-sub { color: #ffd1e6; }
-
-    /* 2. Nút Buy Me A Coffee (BMAC) */
-    .bmac-theme {
-      background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-    }
+    /* Định dạng màu sắc các theme */
+    .momo-theme { background: linear-gradient(135deg, #d80073 0%, #a50064 100%); }
+    .bmac-theme { background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%); }
     .bmac-theme .title-main { color: #0f172a; }
-    .bmac-theme .title-sub { color: #475569; }
-
-    /* 3. Nút PayPal */
-    .paypal-theme {
-      background: linear-gradient(135deg, #0079c1 0%, #00457c 100%);
+    .paypal-theme { background: linear-gradient(135deg, #0079c1 0%, #00457c 100%); }
+    .github-theme { background: linear-gradient(135deg, #475569 0%, #334155 100%); }
+    .facebook-theme { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); }
+    
+    /* CẢI TIẾN: Nút TikTok phong cách Neon-Cyber rực rỡ, sáng cá tính không bị đen xì */
+    .tiktok-theme { 
+      background: linear-gradient(135deg, #121824 0%, #1a2333 100%); 
+      border: 1px solid rgba(0, 242, 254, 0.4);
+      box-shadow: inset 0 0 12px rgba(254, 9, 121, 0.2);
     }
-    .paypal-theme .title-sub { color: #bce4ff; }
-
-    /* 4. Nút GitHub */
-    .github-theme {
-      background: linear-gradient(135deg, #475569 0%, #334155 100%);
+    .tiktok-theme:hover {
+      border-color: rgba(254, 9, 121, 0.6);
+      box-shadow: 0 12px 24px rgba(0, 242, 254, 0.25);
     }
-    .github-theme .title-sub { color: #cbd5e1; }
 
-    /* 5. Nút Facebook */
-    .facebook-theme {
-      background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
-    }
-    .facebook-theme .title-sub { color: #ffedd5; }
+    .shopee-theme { background: linear-gradient(135deg, #ff5722 0%, #ee4d2d 100%); }
 
-    /* 6. Nút TikTok (Thêm mới theo yêu cầu) */
-    .tiktok-theme {
-      background: linear-gradient(135deg, #111827 0%, #000000 100%);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-    .tiktok-theme .title-sub { color: #9ca3af; }
-
-
-    /* Tối ưu hóa phản hồi (Responsive Auto-Scale) cho từng thiết bị di động nhỏ/lớn & PC */
     @media (max-width: 480px) {
-      body {
-        padding: 20px 12px;
-      }
-      .bio-wrapper {
-        padding: 30px 16px;
-        border-radius: 24px;
-      }
-      .avatar-container {
-        width: 105px;
-        height: 105px;
-      }
-      .profile-name {
-        font-size: 1.5rem;
-      }
-      .profile-desc {
-        font-size: 0.9rem;
-        margin-bottom: 28px;
-      }
-      .icon-circle {
-        width: 44px;
-        height: 44px;
-        font-size: 1.25rem;
-      }
-      .text-block {
-        padding-right: 44px;
-      }
-      .title-main {
-        font-size: 0.95rem;
-      }
-      .title-sub {
-        font-size: 0.78rem;
-      }
+      body { padding: 20px 12px; }
+      .bio-wrapper { padding: 30px 16px; border-radius: 24px; }
+      .avatar-container { width: 105px; height: 105px; }
+      .profile-name { font-size: 1.5rem; }
+      .profile-desc { font-size: 0.9rem; margin-bottom: 28px; }
+      .icon-circle { width: 44px; height: 44px; font-size: 1.25rem; }
+      .text-block { padding-right: 44px; }
+      .title-main { font-size: 0.95rem; }
     }
   </style>
 </head>
 <body>
+
+  <canvas id="bg-particles"></canvas>
 
   <div class="bio-wrapper">
     
@@ -251,8 +206,8 @@
       <div class="avatar-container">
         <img src="https://raw.githubusercontent.com/ducpiem/-donate-page/ducpiem/card_name.png" alt="Pham Duc" class="avatar-img">
       </div>
-      <h1 class="profile-name">Pham Duc <span style="display:inline-block;">🎉</span></h1>
-      <p class="profile-desc">DONATE WITH</p>
+      <h1 class="profile-name">Pham Duc <span>🎉</span></h1>
+      <p class="profile-desc">OSS libraries & technical knowledge on Viblo.asia</p>
     </div>
 
     <div class="links-list">
@@ -263,7 +218,6 @@
         </div>
         <div class="text-block">
           <div class="title-main">Momo</div>
-         
         </div>
       </a>
 
@@ -273,7 +227,6 @@
         </div>
         <div class="text-block">
           <div class="title-main">Coffee</div>
-        
         </div>
       </a>
 
@@ -283,7 +236,6 @@
         </div>
         <div class="text-block">
           <div class="title-main">PayPal</div>
-          
         </div>
       </a>
 
@@ -293,7 +245,6 @@
         </div>
         <div class="text-block">
           <div class="title-main">GitHub</div>
-          
         </div>
       </a>
 
@@ -303,22 +254,91 @@
         </div>
         <div class="text-block">
           <div class="title-main">Facebook</div>
-          
         </div>
       </a>
 
       <a href="https://www.tiktok.com/@ducpiem" class="bio-item tiktok-theme" target="_blank">
-        <div class="icon-circle">
-          <i class="fa-brands fa-tiktok" style="color: #000000;"></i>
+        <div class="icon-circle" style="background: linear-gradient(45deg, #00f2fe, #fe0979); box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);">
+          <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
         </div>
         <div class="text-block">
-          <div class="title-main">TikTok</div>
-          
+          <div class="title-main" style="text-shadow: 0 0 6px rgba(0, 242, 254, 0.5);">TikTok</div>
+        </div>
+      </a>
+
+      <a href="YOUR_SHOPEE_CART_LINK_HERE" class="bio-item shopee-theme" target="_blank">
+        <div class="icon-circle">
+          <i class="fa-solid fa-bag-shopping" style="color: #ee4d2d;"></i>
+        </div>
+        <div class="text-block">
+          <div class="title-main">Shopee</div>
         </div>
       </a>
 
     </div>
   </div>
+
+  <script>
+    const canvas = document.getElementById('bg-particles');
+    const ctx = canvas.getContext('2d');
+
+    let particlesArray = [];
+    const numberOfParticles = 40;
+
+    function setCanvasSize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    setCanvasSize();
+    window.addEventListener('resize', setCanvasSize);
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = Math.random() * 0.4 - 0.2;
+        this.speedY = Math.random() * 0.5 + 0.1;
+        this.opacity = Math.random() * 0.5 + 0.2;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y -= this.speedY;
+        if (this.y < 0) {
+          this.y = canvas.height;
+          this.x = Math.random() * canvas.width;
+        }
+        if (this.x > canvas.width || this.x < 0) {
+          this.speedX = -this.speedX;
+        }
+      }
+      draw() {
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      particlesArray = [];
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+  </script>
 
 </body>
 </html>
