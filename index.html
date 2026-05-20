@@ -1,439 +1,137 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta name="p:domain_verify" content="2fc84808d25a1917 nudge_content_78d25a1917d0b77c0ec2b70a52"/>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support Pham Duc 🎉</title>
-  <meta name="description" content="Pham Duc" />
-  <meta property="og:title" content="Support Pham Duc 🎉" />
-  <meta property="og:description" content="Duc Pham " />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ducpiem.github.io/ducpm/" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/ducpiem/ducpm/refs/heads/ducpiem/avatar.jpg" />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!DOCTYPE html><html lang="vi"><head>  <meta name="p:domain_verify" content="2fc84808d25a1917 nudge_content_78d25a1917d0b77c0ec2b70a52"/>  <meta charset="UTF-8">  <meta http-equiv="X-UA-Compatible" content="IE=edge">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Support Pham Duc 🎉</title>  <meta name="description" content="Pham Duc" />  <meta property="og:title" content="Support Pham Duc 🎉" />  <meta property="og:description" content="Duc Pham " />  <meta property="og:type" content="website" />  <meta property="og:url" content="https://ducpiem.github.io/ducpm/" />  <meta property="og:image" content="https://raw.githubusercontent.com/ducpiem/ducpm/refs/heads/ducpiem/avatar.jpg" />    <link rel="preconnect" href="https://fonts.googleapis.com">  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  <style>    * {      box-sizing: border-box;
+ margin: 0;       padding: 0;    }    body {      background-color: #0b0f19;      color: #ffffff;      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+ display: flex;      justify-content: center;      align-items: center;      min-height: 100vh;      padding: 40px 20px 100px 20px;      position: relative;      overflow-x: hidden;
+ }    /* --- HIỆU ỨNG LIQUID NỀN CHUYỂN ĐỘNG --- */    .liquid-bg-container {      position: fixed;      top: 0;      left: 0;
+ width: 100%;      height: 100%;      z-index: -2;      overflow: hidden;      pointer-events: none;    }    .liquid-blob {      position: absolute;      border-radius: 50%;      filter: blur(80px);
+ mix-blend-mode: screen;      opacity: 0.24;      animation: floatFluid 25s infinite alternate ease-in-out;    }    .blob-1 { width: 450px; height: 450px;
+ background: radial-gradient(circle, #4f46e5 0%, rgba(0,0,0,0) 70%); top: -10%; left: -10%; animation-duration: 20s; }    .blob-2 { width: 500px; height: 500px;
+ background: radial-gradient(circle, #ec4899 0%, rgba(0,0,0,0) 70%); bottom: -15%; right: -10%; animation-duration: 28s; }    .blob-3 { width: 380px; height: 380px;
+ background: radial-gradient(circle, #00f2fe 0%, rgba(0,0,0,0) 70%); top: 40%; left: 50%; transform: translate(-50%, -50%); animation-duration: 24s;
+ }    @keyframes floatFluid {      0% { transform: translate(0px, 0px) scale(1) rotate(0deg);
+ }      33% { transform: translate(40px, -60px) scale(1.1) rotate(120deg); }      66% { transform: translate(-30px, 30px) scale(0.9) rotate(240deg);
+ }      100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }    }    #bg-particles {      position: fixed;      top: 0;      left: 0;
+ width: 100%;      height: 100%;      z-index: 2;      pointer-events: none;    }    /* --- KHUNG MENU TỐI TRONG SUỐT --- */    .bio-wrapper {      width: 100%;
+ max-width: 540px;      background: rgba(15, 23, 42, 0.45);      backdrop-filter: blur(35px) saturate(180%);      -webkit-backdrop-filter: blur(35px) saturate(180%);      border: 1px solid rgba(255, 255, 255, 0.08);
+ border-radius: 32px;      padding: 40px 24px;      text-align: center;      box-shadow:         0 24px 80px rgba(0, 0, 0, 0.55),         inset 0 1px 1px rgba(255, 255, 255, 0.1);
+ position: relative;      z-index: 1;    }    .avatar-container {      position: relative;      width: 120px;      height: 120px;      margin: 0 auto 20px auto;
+ background: rgba(255, 255, 255, 0.9);      border-radius: 50%;      padding: 4px;      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+ }    .avatar-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }    .profile-name { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.5px;
+ margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #ffffff; }    .profile-desc { font-size: 1rem; color: #94a3b8;
+ line-height: 1.5; margin-bottom: 16px; font-weight: 400; }    
+    /* --- PHẦN TIỆN ÍCH ĐỒNG HỒ & BỘ ĐẾM MỚI THÊM --- */
+    .widgets-container { display: flex; justify-content: center; gap: 16px; margin-bottom: 24px; }
+    .widget-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 8px 16px; font-size: 0.85rem; color: #cbd5e1; display: flex; align-items: center; gap: 8px; box-shadow: inset 0 1px 0px rgba(255,255,255,0.05); }
+    .widget-box i { color: #00f2fe; }
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: #0b0f19;
-      color: #ffffff;
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 40px 20px 100px 20px;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* --- HIỆU ỨNG LIQUID NỀN CHUYỂN ĐỘNG --- */
-    .liquid-bg-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .liquid-blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      mix-blend-mode: screen;
-      opacity: 0.24;
-      animation: floatFluid 25s infinite alternate ease-in-out;
-    }
-
-    .blob-1 { width: 450px; height: 450px; background: radial-gradient(circle, #4f46e5 0%, rgba(0,0,0,0) 70%); top: -10%; left: -10%; animation-duration: 20s; }
-    .blob-2 { width: 500px; height: 500px; background: radial-gradient(circle, #ec4899 0%, rgba(0,0,0,0) 70%); bottom: -15%; right: -10%; animation-duration: 28s; }
-    .blob-3 { width: 380px; height: 380px; background: radial-gradient(circle, #00f2fe 0%, rgba(0,0,0,0) 70%); top: 40%; left: 50%; transform: translate(-50%, -50%); animation-duration: 24s; }
-
-    @keyframes floatFluid {
-      0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
-      33% { transform: translate(40px, -60px) scale(1.1) rotate(120deg); }
-      66% { transform: translate(-30px, 30px) scale(0.9) rotate(240deg); }
-      100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }
-    }
-
-    #bg-particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    /* --- KHUNG MENU TỐI TRONG SUỐT --- */
-    .bio-wrapper {
-      width: 100%;
-      max-width: 540px;
-      background: rgba(15, 23, 42, 0.45);
-      backdrop-filter: blur(35px) saturate(180%);
-      -webkit-backdrop-filter: blur(35px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 32px;
-      padding: 40px 24px;
-      text-align: center;
-      box-shadow: 
-        0 24px 80px rgba(0, 0, 0, 0.55),
-        inset 0 1px 1px rgba(255, 255, 255, 0.1);
-      position: relative;
-      z-index: 1;
-    }
-
-    .avatar-container {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 20px auto;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      padding: 4px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    }
-
-    .avatar-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
-    .profile-name { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #ffffff; }
-    .profile-desc { font-size: 1rem; color: #94a3b8; line-height: 1.5; margin-bottom: 36px; font-weight: 400; }
-
-    .links-list { display: flex; flex-direction: column; gap: 18px; }
-    
-    /* Cấu trúc dòng thông thường */
-    .bio-item {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      text-decoration: none;
-      border-radius: 50px;
-      padding: 12px 14px;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      position: relative;
-    }
-
-    /* --- CẤU TRÚC ĐẶC BIỆT CHO HÀNG TIKTOK ĐỂ CHỨA NÚT PHỤ --- */
-    .tiktok-row-container {
-      display: flex;
-      align-items: center;
-      gap: 12px; /* Khoảng cách giữa nút to và nút nhỏ */
-      width: 100%;
-    }
-    .tiktok-main-btn {
-      flex-grow: 1; /* Nút TikTok chính tự động chiếm hết khoảng trống bên trái */
-    }
-
-    /* --- NÚT PHỤ "CỬA HÀNG" PHÁT SÁNG CHÚ Ý --- */
-    .tiktok-shop-badge {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 72px;
-      height: 78px; /* Tương đương chiều cao của nút lớn */
-      border-radius: 20px;
-      text-decoration: none;
-      /* Dải màu chuyển sắc Neon kết nối giữa TikTok và Shopee */
-      background: linear-gradient(135deg, #00f2fe 0%, #fe0979 100%);
-      color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      flex-shrink: 0; /* Giữ nguyên kích thước không bị móp */
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
-      transition: all 0.3s ease;
-      position: relative;
-      animation: neonPulse 2s infinite ease-in-out; /* Hiệu ứng nhấp nháy thu hút chú ý */
-    }
-
-    .tiktok-shop-badge i {
-      font-size: 1.3rem;
-      margin-bottom: 4px;
-    }
-
-    .tiktok-shop-badge:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 0 25px rgba(254, 9, 121, 0.8);
-    }
-
-    /* Hiệu ứng nhịp tim phát sáng (Pulse) liên tục */
-    @keyframes neonPulse {
-      0% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 4px rgba(254, 9, 121, 0.3); }
-      50% { box-shadow: 0 0 22px rgba(0, 242, 254, 0.8), 0 0 12px rgba(254, 9, 121, 0.6); transform: scale(1.02); }
-      100% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 4px rgba(254, 9, 121, 0.3); }
-    }
-
-    .icon-circle {
-      width: 52px; height: 52px; border-radius: 50%; background: #ffffff;
-      display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease;
-    }
-
-    .bio-item:hover .icon-circle { transform: rotate(6deg) scale(1.05); }
-    .text-block { flex-grow: 1; padding-right: 52px; text-align: center; }
-    .title-main { font-size: 1.05rem; font-weight: 600; color: #ffffff; }
-
-    /* --- THEMES NÚT --- */
-    .momo-theme { background: linear-gradient(135deg, rgba(216,0,115,0.85) 0%, rgba(165,0,100,0.85) 100%); }
-    .momo-theme:hover { transform: translateY(-3px); border-color: rgba(216, 0, 115, 0.6); box-shadow: 0 12px 30px rgba(216, 0, 115, 0.45); }
-    .paypal-theme { background: linear-gradient(135deg, rgba(0,121,193,0.85) 0%, rgba(0,69,124,0.85) 100%); }
-    .paypal-theme:hover { transform: translateY(-3px); border-color: rgba(0, 121, 193, 0.6); box-shadow: 0 12px 30px rgba(0, 121, 193, 0.45); }
-    .facebook-theme { background: linear-gradient(135deg, #1877F2 0%, #0d5ca7 100%); }
-    .facebook-theme:hover { transform: translateY(-3px); border-color: rgba(24, 119, 242, 0.6); box-shadow: 0 12px 30px rgba(24, 119, 242, 0.45); }
-    .tpbank-theme { background: linear-gradient(135deg, #51247b 0%, #ea5b0c 100%); }
-    .tpbank-theme:hover { transform: translateY(-3px); border-color: rgba(234, 91, 12, 0.6); box-shadow: 0 12px 30px rgba(81, 36, 123, 0.6); }
-    
-    .tiktok-theme { background: linear-gradient(135deg, #121824 0%, #1a2333 100%); border: 1px solid rgba(0, 242, 254, 0.3); }
-    .tiktok-theme:hover { transform: translateY(-3px); border-color: rgba(254, 9, 121, 0.7); box-shadow: 0 12px 30px rgba(0, 242, 254, 0.35); }
-    
-    .shopee-theme { background: linear-gradient(135deg, rgba(255,87,34,0.85) 0%, rgba(238,77,45,0.85) 100%); }
-    .shopee-theme:hover { transform: translateY(-3px); border-color: rgba(255, 87, 34, 0.6); box-shadow: 0 12px 30px rgba(255, 87, 34, 0.45); }
-    .bmac-theme { background: linear-gradient(135deg, #FFDD00 0%, #F4C430 100%); }
-    .bmac-theme .title-main { color: #111111; }
-    .bmac-theme:hover { transform: translateY(-3px); border-color: rgba(255, 221, 0, 0.8); box-shadow: 0 12px 30px rgba(255, 221, 0, 0.5); }
-    .github-theme { background: linear-gradient(135deg, rgba(71,85,105,0.85) 0%, rgba(51,65,85,0.85) 100%); }
-    .github-theme:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 12px 30px rgba(71, 85, 105, 0.45); }
-
-    /* --- TRÌNH PHÁT NHẠC --- */
-    .music-sticky-player {
-      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 460px;
-      background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
-      border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 12px 20px;
-      display: flex; align-items: center; justify-content: space-between; box-shadow: 0 16px 40px rgba(0,0,0,0.5);
-      z-index: 1000;
-    }
-
-    .music-info-side { display: flex; align-items: center; gap: 12px; flex-grow: 1; overflow: hidden; }
-    .disc-container {
-      width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg, #fe0979, #00f2fe);
-      display: flex; align-items: center; justify-content: center; animation: spinDisc 4s linear infinite; animation-play-state: paused;
-    }
-    .disc-container.playing { animation-play-state: running; }
-    .disc-container i { color: #ffffff; font-size: 1.1rem; }
-    .track-details { display: flex; flex-direction: column; overflow: hidden; }
-    .track-title { font-size: 0.9rem; font-weight: 600; color: #ffffff; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-    .track-artist { font-size: 0.75rem; color: #94a3b8; }
-    .music-controls-side { display: flex; align-items: center; gap: 16px; }
-
-    .btn-play-pause {
-      width: 36px; height: 36px; border-radius: 50%; border: none; background: #ffffff; color: #0f172a;
-      display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;
-    }
-    .btn-play-pause:hover { transform: scale(1.08); background: #00f2fe; }
-
-    @keyframes spinDisc { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-    @media (max-width: 480px) {
-      body { padding: 20px 12px 90px 12px; }
-      .bio-wrapper { padding: 30px 16px; border-radius: 24px; }
-      .avatar-container { width: 105px; height: 105px; }
-      .profile-name { font-size: 1.5rem; }
-      .profile-desc { font-size: 0.9rem; margin-bottom: 28px; }
-      .icon-circle { width: 44px; height: 44px; font-size: 1.25rem; }
-      .text-block { padding-right: 44px; }
-      .title-main { font-size: 0.95rem; }
-      .music-sticky-player { bottom: 16px; padding: 10px 14px; }
-      .tiktok-row-container { gap: 8px; }
-      .tiktok-shop-badge { width: 62px; height: 72px; font-size: 0.65rem; border-radius: 16px; }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="liquid-bg-container">
-    <div class="liquid-blob blob-1"></div>
-    <div class="liquid-blob blob-2"></div>
-    <div class="liquid-blob blob-3"></div>
-  </div>
-
-  <canvas id="bg-particles"></canvas>
-
-  <div class="bio-wrapper">
-    <div class="profile-header">
-      <div class="avatar-container">
-        <img src="https://raw.githubusercontent.com/ducpiem/ducpm/refs/heads/ducpiem/avatar.jpg" alt="Pham Duc" class="avatar-img">
+    .links-list { display: flex; flex-direction: column; gap: 18px;
+ }       /* Cấu trúc dòng thông thường */    .bio-item {      display: flex;      align-items: center;      width: 100%;      text-decoration: none;
+ border-radius: 50px;      padding: 12px 14px;      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);      border: 1px solid rgba(255, 255, 255, 0.04);
+ position: relative;    }    /* --- CẤU TRÚC ĐẶC BIỆT CHO HÀNG TIKTOK ĐỂ CHỨA NÚT PHỤ --- */    .tiktok-row-container {      display: flex;
+ align-items: center;      gap: 12px; /* Khoảng cách giữa nút to và nút nhỏ */      width: 100%;
+ }    .tiktok-main-btn {      flex-grow: 1; /* Nút TikTok chính tự động chiếm hết khoảng trống bên trái */    }    /* --- NÚT PHỤ "CỬA HÀNG" PHÁT SÁNG CHÚ Ý --- */    .tiktok-shop-badge {      display: flex;
+ flex-direction: column;      align-items: center;      justify-content: center;      width: 72px;      height: 78px;
+ /* Tương đương chiều cao của nút lớn */      border-radius: 20px;      text-decoration: none;
+ /* Dải màu chuyển sắc Neon kết nối giữa TikTok và Shopee */      background: linear-gradient(135deg, #00f2fe 0%, #fe0979 100%);
+ color: #ffffff;      font-size: 0.75rem;      font-weight: 700;      flex-shrink: 0; /* Giữ nguyên kích thước không bị móp */      box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+ transition: all 0.3s ease;      position: relative;      animation: neonPulse 2s infinite ease-in-out;
+ /* Hiệu ứng nhấp nháy thu hút chú ý */    }    .tiktok-shop-badge i {      font-size: 1.3rem;      margin-bottom: 4px;
+ }    .tiktok-shop-badge:hover {      transform: translateY(-3px) scale(1.05);      box-shadow: 0 0 25px rgba(254, 9, 121, 0.8);
+ }    /* Hiệu ứng nhịp tim phát sáng (Pulse) liên tục */    @keyframes neonPulse {      0% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 4px rgba(254, 9, 121, 0.3);
+ }      50% { box-shadow: 0 0 22px rgba(0, 242, 254, 0.8), 0 0 12px rgba(254, 9, 121, 0.6);
+ transform: scale(1.02); }      100% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 4px rgba(254, 9, 121, 0.3);
+ }    }    .icon-circle {      width: 52px; height: 52px; border-radius: 50%; background: #ffffff;      display: flex; align-items: center; justify-content: center;
+ font-size: 1.5rem; flex-shrink: 0;      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease;
+ }    .bio-item:hover .icon-circle { transform: rotate(6deg) scale(1.05); }    .text-block { flex-grow: 1; padding-right: 52px; text-align: center;
+ }    .title-main { font-size: 1.05rem; font-weight: 600; color: #ffffff; }    /* --- THEMES NÚT --- */    .momo-theme { background: linear-gradient(135deg, rgba(216,0,115,0.85) 0%, rgba(165,0,100,0.85) 100%);
+ }    .momo-theme:hover { transform: translateY(-3px); border-color: rgba(216, 0, 115, 0.6); box-shadow: 0 12px 30px rgba(216, 0, 115, 0.45);
+ }    .paypal-theme { background: linear-gradient(135deg, rgba(0,121,193,0.85) 0%, rgba(0,69,124,0.85) 100%); }    .paypal-theme:hover { transform: translateY(-3px); border-color: rgba(0, 121, 193, 0.6);
+ box-shadow: 0 12px 30px rgba(0, 121, 193, 0.45); }    .facebook-theme { background: linear-gradient(135deg, #1877F2 0%, #0d5ca7 100%);
+ }    .facebook-theme:hover { transform: translateY(-3px); border-color: rgba(24, 119, 242, 0.6); box-shadow: 0 12px 30px rgba(24, 119, 242, 0.45);
+ }    .tpbank-theme { background: linear-gradient(135deg, #51247b 0%, #ea5b0c 100%); }    .tpbank-theme:hover { transform: translateY(-3px); border-color: rgba(234, 91, 12, 0.6);
+ box-shadow: 0 12px 30px rgba(81, 36, 123, 0.6); }     .tiktok-theme { background: linear-gradient(135deg, #121824 0%, #1a2333 100%);
+ border: 1px solid rgba(0, 242, 254, 0.3); }    .tiktok-theme:hover { transform: translateY(-3px); border-color: rgba(254, 9, 121, 0.7);
+ box-shadow: 0 12px 30px rgba(0, 242, 254, 0.35); }     .shopee-theme { background: linear-gradient(135deg, rgba(255,87,34,0.85) 0%, rgba(238,77,45,0.85) 100%);
+ }    .shopee-theme:hover { transform: translateY(-3px); border-color: rgba(255, 87, 34, 0.6); box-shadow: 0 12px 30px rgba(255, 87, 34, 0.45);
+ }    .bmac-theme { background: linear-gradient(135deg, #FFDD00 0%, #F4C430 100%); }    .bmac-theme .title-main { color: #111111; }    .bmac-theme:hover { transform: translateY(-3px);
+ border-color: rgba(255, 221, 0, 0.8); box-shadow: 0 12px 30px rgba(255, 221, 0, 0.5);
+ }    .github-theme { background: linear-gradient(135deg, rgba(71,85,105,0.85) 0%, rgba(51,65,85,0.85) 100%); }    .github-theme:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.3);
+ box-shadow: 0 12px 30px rgba(71, 85, 105, 0.45); }    /* --- TRÌNH PHÁT NHẠC --- */    .music-sticky-player { position: fixed;
+ bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 460px;      background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(20px) saturate(160%);
+ -webkit-backdrop-filter: blur(20px) saturate(160%);      border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 12px 20px;      display: flex; align-items: center;
+ justify-content: space-between; box-shadow: 0 16px 40px rgba(0,0,0,0.5);      z-index: 1000;    }    .music-info-side { display: flex; align-items: center; gap: 12px; flex-grow: 1;
+ overflow: hidden; }    .disc-container {      width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg, #fe0979, #00f2fe);      display: flex; align-items: center;
+ justify-content: center; animation: spinDisc 4s linear infinite; animation-play-state: paused;    }    .disc-container.playing { animation-play-state: running; }    .disc-container i { color: #ffffff;
+ font-size: 1.1rem; }    .track-details { display: flex; flex-direction: column; overflow: hidden; }    .track-title { font-size: 0.9rem; font-weight: 600; color: #ffffff;
+ white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }    .track-artist { font-size: 0.75rem; color: #94a3b8; }    .music-controls-side { display: flex; align-items: center;
+ gap: 16px; }    .btn-play-pause {      width: 36px; height: 36px; border-radius: 50%; border: none; background: #ffffff; color: #0f172a;      display: flex;
+ align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;    }    .btn-play-pause:hover { transform: scale(1.08); background: #00f2fe;
+ }    @keyframes spinDisc { from { transform: rotate(0deg); } to { transform: rotate(360deg);
+ } }    @media (max-width: 480px) {      body { padding: 20px 12px 90px 12px;
+ }      .bio-wrapper { padding: 30px 16px; border-radius: 24px; }      .avatar-container { width: 105px; height: 105px;
+ }      .profile-name { font-size: 1.5rem; }      .profile-desc { font-size: 0.9rem; margin-bottom: 20px; }      .widgets-container { margin-bottom: 18px; gap: 10px; }
+      .widget-box { padding: 6px 12px; font-size: 0.75rem; }      .icon-circle { width: 44px;
+ height: 44px; font-size: 1.25rem; }      .text-block { padding-right: 44px; }      .title-main { font-size: 0.95rem;
+ }      .music-sticky-player { bottom: 16px; padding: 10px 14px; }      .tiktok-row-container { gap: 8px;
+ }      .tiktok-shop-badge { width: 62px; height: 72px; font-size: 0.65rem; border-radius: 16px;
+ }    }</style></head><body>  <div class="liquid-bg-container">    <div class="liquid-blob blob-1"></div>    <div class="liquid-blob blob-2"></div>    <div class="liquid-blob blob-3"></div>  </div>  <canvas id="bg-particles"></canvas>  <div class="bio-wrapper">    <div class="profile-header">      <div class="avatar-container">        <img src="https://raw.githubusercontent.com/ducpiem/ducpm/refs/heads/ducpiem/avatar.jpg" alt="Pham Duc" class="avatar-img">      </div>      <h1 class="profile-name">Pham Duc <span>🎉</span></h1>      <p class="profile-desc">DONATE WITH</p>
+      
+      <div class="widgets-container">
+        <div class="widget-box">
+          <i class="fa-regular fa-clock"></i>
+          <span id="live-clock">00:00:00</span>
+        </div>
+        <div class="widget-box">
+          <i class="fa-regular fa-eye"></i>
+          <span>Lượt xem: <strong id="visit-counter" style="color: #00f2fe;">1</strong></span>
+        </div>
       </div>
-      <h1 class="profile-name">Pham Duc <span>🎉</span></h1>
-      <p class="profile-desc">DONATE WITH</p>
-    </div>
-
-    <div class="links-list">
-      <a href="https://me.momo.vn/ducpm" class="bio-item momo-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-solid fa-wallet" style="color: #a50064;"></i></div>
-        <div class="text-block"><div class="title-main">Momo</div></div>
-      </a>
-
-      <a href="https://www.paypal.me/ducthanhdbp" class="bio-item paypal-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-brands fa-paypal" style="color: #00457c;"></i></div>
-        <div class="text-block"><div class="title-main">PayPal</div></div>
-      </a>
-
-      <a href="https://fb.com/ducpmmk" class="bio-item facebook-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i></div>
-        <div class="text-block"><div class="title-main">Facebook</div></div>
-      </a>
-
-      <a href="https://img.vietqr.io/image/tpb-22229658888-compact2.jpg?accountName=PHAM%20MINH%20DUC&addInfo=Donate" class="bio-item tpbank-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-solid fa-credit-card" style="color: #51247b;"></i></div>
-        <div class="text-block"><div class="title-main">TPBank</div></div>
-      </a>
-
-      <div class="tiktok-row-container">
-        <a href="https://www.tiktok.com/@ducpm92" class="bio-item tiktok-theme tiktok-main-btn" target="_blank">
-          <div class="icon-circle" style="background: linear-gradient(45deg, #00f2fe, #fe0979); box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);">
-            <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
-          </div>
-          <div class="text-block"><div class="title-main" style="text-shadow: 0 0 6px rgba(0, 242, 254, 0.5);">TikTok</div></div>
-        </a>
-        
-        <a href="https://vt.tiktok.com/ZS9YBkaFskqpX-Iqrmb/" class="tiktok-shop-badge" title="Trưng bày sản phẩm" target="_blank">
-          <i class="fa-solid fa-store"></i>
-          <span>Shop</span>
-        </a>
-      </div>
-
-      <a href="https://collshp.com/linhkstorefront?view=storefront" class="bio-item shopee-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-solid fa-bag-shopping" style="color: #ee4d2d;"></i></div>
-        <div class="text-block"><div class="title-main">Shopee</div></div>
-      </a>
-
-      <a href="https://www.buymeacoffee.com/ducpiem" class="bio-item bmac-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-solid fa-mug-hot" style="color: #FFDD00; text-shadow: 0px 0px 2px rgba(0,0,0,0.8);"></i></div>
-        <div class="text-block"><div class="title-main">Coffee</div></div>
-      </a>
-
-      <a href="https://github.com/ducpiem" class="bio-item github-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-brands fa-github" style="color: #181717;"></i></div>
-        <div class="text-block"><div class="title-main">GitHub</div></div>
-      </a>
-    </div>
-  </div>
-
-  <div class="music-sticky-player">
-    <div class="music-info-side">
-      <div class="disc-container" id="music-disc"><i class="fa-solid fa-music"></i></div>
-      <div class="track-details">
-        <span class="track-title" id="track-name">Hạt Mưa Vương Vấn | Lo-Fi Beats & Chill</span>
-        <span class="track-artist">Chill Music</span>
-      </div>
-    </div>
-    <div class="music-controls-side">
-      <button class="btn-play-pause" id="play-btn" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
-    </div>
-    <audio id="main-audio" src="https://stream.nixcdn.com/resa/2601/bd/c8/gtmqjhy2qb.flac?st=ekk41tPq3cusS5Fv-8aQ1g&e=1779319064&download=true" loop></audio>
-  </div>
-
-  <script>
-    /* --- LOGIC PHÁT NHẠC --- */
-    const audio = document.getElementById('main-audio');
-    const playBtn = document.getElementById('play-btn');
-    const disc = document.getElementById('music-disc');
-
-    let isMusicStarted = false;
-
-    function playMusic() {
-      if (isMusicStarted) return;
-      audio.volume = 0.03;
-      audio.play().then(() => {
-        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-        disc.classList.add('playing');
-        isMusicStarted = true;
-        removeInteractionListeners();
-      }).catch(err => { console.log("Chờ tương tác..."); });
-    }
-
-    function togglePlay(e) {
-      if(e) e.stopPropagation(); 
-      if (audio.paused) {
-        audio.play().then(() => {
-          playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-          disc.classList.add('playing');
-          isMusicStarted = true;
-        });
-      } else {
-        audio.pause();
-        playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-        disc.classList.remove('playing');
-      }
-    }
-
-    playBtn.addEventListener('click', togglePlay);
-
-    function addInteractionListeners() {
-      window.addEventListener('click', playMusic, { passive: true });
-      window.addEventListener('touchstart', playMusic, { passive: true });
-      window.addEventListener('scroll', playMusic, { passive: true });
-    }
-
-    function removeInteractionListeners() {
-      window.removeEventListener('click', playMusic);
-      window.removeEventListener('touchstart', playMusic);
-      window.removeEventListener('scroll', playMusic);
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      addInteractionListeners();
-      playMusic();
+      
+    </div>    <div class="links-list">      <a href="https://me.momo.vn/ducpm" class="bio-item momo-theme" target="_blank">        <div class="icon-circle"><i class="fa-solid fa-wallet" style="color: #a50064;"></i></div>        <div class="text-block"><div class="title-main">Momo</div></div>      </a>      <a href="https://www.paypal.me/ducthanhdbp" class="bio-item paypal-theme" target="_blank">        <div class="icon-circle"><i class="fa-brands fa-paypal" style="color: #00457c;"></i></div>        <div class="text-block"><div class="title-main">PayPal</div></div>      </a>      <a href="https://fb.com/ducpmmk" class="bio-item facebook-theme" target="_blank">        <div class="icon-circle"><i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i></div>        <div class="text-block"><div class="title-main">Facebook</div></div>      </a>      <a href="https://img.vietqr.io/image/tpb-22229658888-compact2.jpg?accountName=PHAM%20MINH%20DUC&addInfo=Donate" class="bio-item tpbank-theme" target="_blank">        <div class="icon-circle"><i class="fa-solid fa-credit-card" style="color: #51247b;"></i></div>        <div class="text-block"><div class="title-main">TPBank</div></div>      </a>      <div class="tiktok-row-container">        <a href="https://www.tiktok.com/@ducpm92" class="bio-item tiktok-theme tiktok-main-btn" target="_blank">          <div class="icon-circle" style="background: linear-gradient(45deg, #00f2fe, #fe0979;
+ box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);">            <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>          </div>          <div class="text-block"><div class="title-main" style="text-shadow: 0 0 6px rgba(0, 242, 254, 0.5);">TikTok</div></div>        </a>                  <a href="https://vt.tiktok.com/ZS9YBkaFskqpX-Iqrmb/" class="tiktok-shop-badge" title="Trưng bày sản phẩm" target="_blank">          <i class="fa-solid fa-store"></i>          <span>Shop</span>        </a>      </div>      <a href="https://collshp.com/linhkstorefront?view=storefront" class="bio-item shopee-theme" target="_blank">        <div class="icon-circle"><i class="fa-solid fa-bag-shopping" style="color: #ee4d2d;"></i></div>        <div class="text-block"><div class="title-main">Shopee</div></div>      </a>      <a href="https://www.buymeacoffee.com/ducpiem" class="bio-item bmac-theme" target="_blank">        <div class="icon-circle"><i class="fa-solid fa-mug-hot" style="color: 
+ #FFDD00; text-shadow: 0px 0px 2px rgba(0,0,0,0.8);"></i></div>        <div class="text-block"><div class="title-main">Coffee</div></div>      </a>      <a href="https://github.com/ducpiem" class="bio-item github-theme" target="_blank">        <div class="icon-circle"><i class="fa-brands fa-github" style="color: #181717;"></i></div>        <div class="text-block"><div class="title-main">GitHub</div></div>      </a>    </div>  </div>  <div class="music-sticky-player">    <div class="music-info-side">      <div class="disc-container" id="music-disc"><i class="fa-solid fa-music"></i></div>      <div class="track-details">        <span class="track-title" id="track-name">Hạt Mưa Vương Vấn | Lo-Fi Beats & Chill</span>        <span class="track-artist">Chill Music</span>      </div>    </div>    <div class="music-controls-side">      <button class="btn-play-pause" id="play-btn" title="Play/Pause"><i class="fa-solid fa-play"></i></button>    </div>    <audio id="main-audio" src="https://stream.nixcdn.com/resa/2601/bd/c8/gtmqjhy2qb.flac?st=ekk41tPq3cusS5Fv-8aQ1g&e=1779319064&download=true" loop></audio>  </div>  <script>    /* --- LOGIC PHÁT NHẠC --- */    const audio = document.getElementById('main-audio');
+ const playBtn = document.getElementById('play-btn');    const disc = document.getElementById('music-disc');    let isMusicStarted = false;    function playMusic() {      if (isMusicStarted) return;
+ audio.volume = 0.03;      audio.play().then(() => {        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';        disc.classList.add('playing');        isMusicStarted = true;        removeInteractionListeners();      }).catch(err => { console.log("Chờ tương tác..."); });
+ }    function togglePlay(e) {      if(e) e.stopPropagation();       if (audio.paused) {        audio.play().then(() => {          playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';          disc.classList.add('playing');          isMusicStarted = true;        });
+ } else {        audio.pause();        playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';        disc.classList.remove('playing');      }    }    playBtn.addEventListener('click', togglePlay);
+ function addInteractionListeners() {      window.addEventListener('click', playMusic, { passive: true });      window.addEventListener('touchstart', playMusic, { passive: true });
+ window.addEventListener('scroll', playMusic, { passive: true });    }    function removeInteractionListeners() {      window.removeEventListener('click', playMusic);      window.removeEventListener('touchstart', playMusic);      window.removeEventListener('scroll', playMusic);
+ }    window.addEventListener('DOMContentLoaded', () => {      addInteractionListeners();      playMusic();      
+      /* --- CHẠY ĐỒNG HỒ & BỘ ĐẾM KHI TRANG TẢI XONG --- */
+      updateClock();
+      setInterval(updateClock, 1000);
+      updateCounter();
     });
 
-    /* --- HIỆU ỨNG TUYẾT RƠI LOÃNG VÀ NHẸ NHÀNG --- */
-    const canvas = document.getElementById('bg-particles');
-    const ctx = canvas.getContext('2d');
-    let particlesArray = [];
-    const numberOfParticles = 45; 
-
-    function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-    setCanvasSize();
-    window.addEventListener('resize', setCanvasSize);
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2.2 + 1.0; 
-        this.speedX = Math.random() * 0.3 - 0.15;
-        this.speedY = Math.random() * 0.5 + 0.2; 
-        this.opacity = Math.random() * 0.35 + 0.25;
-      }
-      update() {
-        this.x += this.speedX; 
-        this.y += this.speedY; 
-        if (this.y > canvas.height) { 
-          this.y = -10; 
-          this.x = Math.random() * canvas.width; 
-        }
-        if (this.x > canvas.width || this.x < 0) { this.speedX = -this.speedX; }
-      }
-      draw() {
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`; 
-        ctx.beginPath(); 
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); 
-        ctx.fill();
-      }
+    /* --- LOGIC ĐỒNG HỒ MỚI THÊM --- */
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('live-clock').textContent = `${hours}:${minutes}:${seconds}`;
     }
 
-    function init() { for (let i = 0; i < numberOfParticles; i++) { particlesArray.push(new Particle()); } }
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); particlesArray[i].draw(); }
-      requestAnimationFrame(animate);
+    /* --- LOGIC BỘ ĐẾM TRUY CẬP MỚI THÊM --- */
+    function updateCounter() {
+      let visits = localStorage.getItem('page_view_count');
+      if (visits === null) {
+        visits = 1;
+      } else {
+        visits = parseInt(visits) + 1;
+      }
+      localStorage.setItem('page_view_count', visits);
+      document.getElementById('visit-counter').textContent = visits;
     }
-    init(); animate();
-  </script>
-</body>
-</html>
+
+    /* --- HIỆU ỨNG TUYẾT RƠI LOÃNG VÀ NHẸ NHÀNG --- */    const canvas = document.getElementById('bg-particles');    const ctx = canvas.getContext('2d');
+ let particlesArray = [];    const numberOfParticles = 45;    function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }    setCanvasSize();
+ window.addEventListener('resize', setCanvasSize);    class Particle {      constructor() {        this.x = Math.random() * canvas.width;        this.y = Math.random() * canvas.height;
+ this.size = Math.random() * 2.2 + 1.0;         this.speedX = Math.random() * 0.3 - 0.15;
+ this.speedY = Math.random() * 0.5 + 0.2;         this.opacity = Math.random() * 0.35 + 0.25;
+ }      update() {        this.x += this.speedX;        this.y += this.speedY;
+ if (this.y > canvas.height) {           this.y = -10;           this.x = Math.random() * canvas.width;
+ }        if (this.x > canvas.width || this.x < 0) { this.speedX = -this.speedX;
+ }      }      draw() {        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;        ctx.beginPath();
+ ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);        ctx.fill();      }    }    function init() { for (let i = 0; i < numberOfParticles; i++) { particlesArray.push(new Particle());
+ } }    function animate() {      ctx.clearRect(0, 0, canvas.width, canvas.height);
+ for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); particlesArray[i].draw(); }      requestAnimationFrame(animate);    }    init(); animate();  </script></body></html>
