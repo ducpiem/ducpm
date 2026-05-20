@@ -36,15 +36,15 @@
       position: relative;
       overflow-x: hidden;
     }
-    /* --- CANVAS CHỨA HIỆU ỨNG NỀN & BỤI SAO (ĐÃ ĐƯỢC ĐƯA LÊN TRÊN CÙNG) --- */
+    /* --- CANVAS CHỨA HIỆU ỨNG NỀN & BỤI SAO --- */
     #bg-particles {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 999; /* Lớp trên cùng để bụi sao bay đè lên toàn bộ menu */
-      pointer-events: none; /* Rất quan trọng: Giúp click xuyên qua hạt bụi để bấm nút bình thường */
+      z-index: 999;
+      pointer-events: none;
     }
     /* --- HIỆU ỨNG LIQUID NỀN CHUYỂN ĐỘNG --- */
     .liquid-bg-container {
@@ -126,8 +126,38 @@
       100% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 4px rgba(254, 9, 121, 0.3); }
     }
     
-    .icon-circle { width: 52px; height: 52px; border-radius: 50%; background: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease; }
-    .bio-item:hover .icon-circle { transform: rotate(6deg) scale(1.05); }
+    /* --- HIỆU ỨNG XOAY VÀ SÁNG BẬP BÙNG CHO ICON (MỚI THÊM) --- */
+    .icon-circle { 
+      width: 52px; 
+      height: 52px; 
+      border-radius: 50%; 
+      background: #ffffff; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 1.5rem; 
+      flex-shrink: 0; 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease; /* Tăng thời gian mượt mà */
+    }
+    
+    /* Khi rà chuột vào menu: Icon vừa xoay tròn 360 độ vừa kích hoạt hiệu ứng bập bùng */
+    .bio-item:hover .icon-circle { 
+      animation: iconGlowPulse 1.5s infinite ease-in-out alternate;
+    }
+    
+    /* Animation làm phát sáng nhẹ và co giãn bập bùng */
+    @keyframes iconGlowPulse {
+      0% {
+        transform: rotate(360deg) scale(1.0);
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.4), 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+      100% {
+        transform: rotate(360deg) scale(1.12);
+        box-shadow: 0 0 22px rgba(255, 255, 255, 0.85), 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+    }
+    
     .text-block { flex-grow: 1; padding-right: 52px; text-align: center; }
     .title-main { font-size: 1.05rem; font-weight: 600; color: #ffffff; }
     
@@ -400,16 +430,16 @@
       }
     }
     
-    /* Lớp đối tượng Bụi sao chổi đuôi chuột (Đã làm mờ mờ quyến rũ hơn) */
+    /* Lớp đối tượng Bụi sao chổi đuôi chuột */
     class CometDust {
       constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.size = Math.random() * 2.0 + 0.5; // Kích thước bụi sao nhỏ mịn
+        this.size = Math.random() * 2.0 + 0.5; 
         this.speedX = (Math.random() - 0.5) * 0.6;
-        this.speedY = Math.random() * 0.4 + 0.3; // Rơi xuống nhẹ nhàng
-        this.opacity = 0.55; // Độ đậm ban đầu giảm xuống 0.55 để tạo cảm giác mờ mờ, ảo diệu hơn
-        this.fadeSpeed = Math.random() * 0.012 + 0.012; // Tan biến từ từ mịn màng hơn
+        this.speedY = Math.random() * 0.4 + 0.3; 
+        this.opacity = 0.55; 
+        this.fadeSpeed = Math.random() * 0.012 + 0.012; 
         this.colorType = Math.random();
       }
       update() {
@@ -436,9 +466,7 @@
       for (let i = 0; i < numberOfParticles; i++) { particlesArray.push(new Particle()); } 
     }
     
-    // Đăng ký bắt sự kiện chuột trên phạm vi toàn màn hình (Window)
     window.addEventListener('mousemove', (e) => {
-      // Tăng số hạt sinh ra mỗi lần di chuyển chuột lên 3 hạt để dải bụi trông dày dặn nhưng mờ mịn
       for (let i = 0; i < 3; i++) {
         cometDustArray.push(new CometDust(e.clientX, e.clientY));
       }
