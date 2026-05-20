@@ -36,15 +36,15 @@
       position: relative;
       overflow-x: hidden;
     }
-    /* --- CANVAS CHỨA HIỆU ỨNG NỀN & BỤI SAO --- */
+    /* --- CANVAS CHỨA HIỆU ỨNG NỀN & BỤI SAO (ĐÃ ĐƯỢC ĐƯA LÊN TRÊN CÙNG) --- */
     #bg-particles {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 2;
-      pointer-events: none;
+      z-index: 999; /* Lớp trên cùng để bụi sao bay đè lên toàn bộ menu */
+      pointer-events: none; /* Rất quan trọng: Giúp click xuyên qua hạt bụi để bấm nút bình thường */
     }
     /* --- HIỆU ỨNG LIQUID NỀN CHUYỂN ĐỘNG --- */
     .liquid-bg-container {
@@ -362,9 +362,9 @@
     const canvas = document.getElementById('bg-particles');
     const ctx = canvas.getContext('2d');
     
-    let particlesArray = [];      // Chứa các hạt tuyết rơi nền
-    let cometDustArray = [];      // Chứa bụi sao chổi sinh ra từ chuột
-    const numberOfParticles = 45; // Số lượng tuyết rơi
+    let particlesArray = [];      
+    let cometDustArray = [];      
+    const numberOfParticles = 45; 
     
     function setCanvasSize() { 
       canvas.width = window.innerWidth; 
@@ -400,16 +400,16 @@
       }
     }
     
-    /* Lớp đối tượng Bụi sao chổi đuôi chuột */
+    /* Lớp đối tượng Bụi sao chổi đuôi chuột (Đã làm mờ mờ quyến rũ hơn) */
     class CometDust {
       constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.size = Math.random() * 2.5 + 0.5;
+        this.size = Math.random() * 2.0 + 0.5; // Kích thước bụi sao nhỏ mịn
         this.speedX = (Math.random() - 0.5) * 0.6;
-        this.speedY = Math.random() * 0.5 + 0.4;
-        this.opacity = 1;
-        this.fadeSpeed = Math.random() * 0.015 + 0.015;
+        this.speedY = Math.random() * 0.4 + 0.3; // Rơi xuống nhẹ nhàng
+        this.opacity = 0.55; // Độ đậm ban đầu giảm xuống 0.55 để tạo cảm giác mờ mờ, ảo diệu hơn
+        this.fadeSpeed = Math.random() * 0.012 + 0.012; // Tan biến từ từ mịn màng hơn
         this.colorType = Math.random();
       }
       update() {
@@ -436,15 +436,17 @@
       for (let i = 0; i < numberOfParticles; i++) { particlesArray.push(new Particle()); } 
     }
     
+    // Đăng ký bắt sự kiện chuột trên phạm vi toàn màn hình (Window)
     window.addEventListener('mousemove', (e) => {
-      for (let i = 0; i < 2; i++) {
+      // Tăng số hạt sinh ra mỗi lần di chuyển chuột lên 3 hạt để dải bụi trông dày dặn nhưng mờ mịn
+      for (let i = 0; i < 3; i++) {
         cometDustArray.push(new CometDust(e.clientX, e.clientY));
       }
     });
     
     window.addEventListener('touchmove', (e) => {
       if(e.touches.length > 0) {
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 3; i++) {
           cometDustArray.push(new CometDust(e.touches[0].clientX, e.touches[0].clientY));
         }
       }
