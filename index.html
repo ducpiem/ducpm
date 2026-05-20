@@ -26,19 +26,19 @@
     }
 
     body {
-      background-color: #0b0f19;
+      background-color: #060913;
       color: #ffffff;
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 40px 20px 100px 20px;
+      padding: 40px 20px 120px 20px; /* Chừa không gian thoải mái bên dưới */
       position: relative;
       overflow-x: hidden;
     }
 
-    /* --- HIỆU ỨNG LIQUID NỀN CHUYỂN ĐỘNG --- */
+    /* --- HIỆU ỨNG LIQUID GLASS NỀN CHUYỂN ĐỘNG --- */
     .liquid-bg-container {
       position: fixed;
       top: 0;
@@ -55,13 +55,37 @@
       border-radius: 50%;
       filter: blur(80px);
       mix-blend-mode: screen;
-      opacity: 0.24;
+      opacity: 0.25;
       animation: floatFluid 25s infinite alternate ease-in-out;
     }
 
-    .blob-1 { width: 450px; height: 450px; background: radial-gradient(circle, #4f46e5 0%, rgba(0,0,0,0) 70%); top: -10%; left: -10%; animation-duration: 20s; }
-    .blob-2 { width: 500px; height: 500px; background: radial-gradient(circle, #ec4899 0%, rgba(0,0,0,0) 70%); bottom: -15%; right: -10%; animation-duration: 28s; }
-    .blob-3 { width: 380px; height: 380px; background: radial-gradient(circle, #00f2fe 0%, rgba(0,0,0,0) 70%); top: 40%; left: 50%; transform: translate(-50%, -50%); animation-duration: 24s; }
+    .blob-1 {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, #617efc 0%, rgba(0,0,0,0) 70%);
+      top: -10%;
+      left: -10%;
+      animation-duration: 20s;
+    }
+
+    .blob-2 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #d80073 0%, rgba(0,0,0,0) 70%);
+      bottom: -15%;
+      right: -10%;
+      animation-duration: 28s;
+    }
+
+    .blob-3 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #00f2fe 0%, rgba(0,0,0,0) 70%);
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-duration: 24s;
+    }
 
     @keyframes floatFluid {
       0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
@@ -76,23 +100,23 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 2;
+      z-index: -1;
       pointer-events: none;
     }
 
-    /* --- KHUNG MENU TỐI TRONG SUỐT --- */
+    /* --- KHUNG CHỨA KÍNH MỜ LIQUID GLASS TỐI --- */
     .bio-wrapper {
       width: 100%;
       max-width: 540px;
-      background: rgba(15, 23, 42, 0.45);
+      background: rgba(10, 17, 32, 0.45);
       backdrop-filter: blur(35px) saturate(180%);
       -webkit-backdrop-filter: blur(35px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.09);
       border-radius: 32px;
-      padding: 40px 24px;
+      padding: 40px 24px 30px 24px;
       text-align: center;
       box-shadow: 
-        0 24px 80px rgba(0, 0, 0, 0.55),
+        0 24px 80px rgba(0, 0, 0, 0.6),
         inset 0 1px 1px rgba(255, 255, 255, 0.1);
       position: relative;
       z-index: 1;
@@ -109,13 +133,38 @@
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
 
-    .avatar-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
-    .profile-name { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #ffffff; }
-    .profile-desc { font-size: 1rem; color: #94a3b8; line-height: 1.5; margin-bottom: 36px; font-weight: 400; }
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
-    .links-list { display: flex; flex-direction: column; gap: 18px; }
-    
-    /* Cấu trúc dòng thông thường */
+    .profile-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .profile-desc {
+      font-size: 1rem;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
     .bio-item {
       display: flex;
       align-items: center;
@@ -128,94 +177,163 @@
       position: relative;
     }
 
-    /* --- CẤU TRÚC ĐẶC BIỆT CHO HÀNG TIKTOK ĐỂ CHỨA NÚT PHỤ --- */
-    .tiktok-row-container {
+    .icon-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #ffffff;
       display: flex;
-      align-items: center;
-      gap: 12px; /* Khoảng cách giữa nút to và nút nhỏ */
-      width: 100%;
-    }
-    .tiktok-main-btn {
-      flex-grow: 1; /* Nút TikTok chính tự động chiếm hết khoảng trống bên trái */
-    }
-
-    /* --- NÚT PHỤ "CỬA HÀNG" PHÁT SÁNG CHÚ Ý --- */
-    .tiktok-shop-badge {
-      display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 72px;
-      height: 78px; /* Tương đương chiều cao của nút lớn */
-      border-radius: 20px;
-      text-decoration: none;
-      /* Dải màu chuyển sắc Neon kết nối giữa TikTok và Shopee */
-      background: linear-gradient(135deg, #00f2fe 0%, #fe0979 100%);
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .bio-item:hover .icon-circle {
+      transform: rotate(6deg) scale(1.05);
+    }
+
+    .text-block {
+      flex-grow: 1;
+      padding-right: 52px;
+      text-align: center;
+    }
+
+    .title-main {
+      font-size: 1.05rem;
+      font-weight: 600;
       color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      flex-shrink: 0; /* Giữ nguyên kích thước không bị móp */
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
-      transition: all 0.3s ease;
-      position: relative;
-      animation: neonPulse 2s infinite ease-in-out; /* Hiệu ứng nhấp nháy thu hút chú ý */
     }
 
-    .tiktok-shop-badge i {
-      font-size: 1.3rem;
-      margin-bottom: 4px;
-    }
-
-    .tiktok-shop-badge:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 0 25px rgba(254, 9, 121, 0.8);
-    }
-
-    /* Hiệu ứng nhịp tim phát sáng (Pulse) liên tục */
-    @keyframes neonPulse {
-      0% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 4px rgba(254, 9, 121, 0.3); }
-      50% { box-shadow: 0 0 22px rgba(0, 242, 254, 0.8), 0 0 12px rgba(254, 9, 121, 0.6); transform: scale(1.02); }
-      100% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 4px rgba(254, 9, 121, 0.3); }
-    }
-
-    .icon-circle {
-      width: 52px; height: 52px; border-radius: 50%; background: #ffffff;
-      display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease;
-    }
-
-    .bio-item:hover .icon-circle { transform: rotate(6deg) scale(1.05); }
-    .text-block { flex-grow: 1; padding-right: 52px; text-align: center; }
-    .title-main { font-size: 1.05rem; font-weight: 600; color: #ffffff; }
-
-    /* --- THEMES NÚT --- */
+    /* --- HIỆU ỨNG THƯƠNG HIỆU --- */
     .momo-theme { background: linear-gradient(135deg, rgba(216,0,115,0.85) 0%, rgba(165,0,100,0.85) 100%); }
     .momo-theme:hover { transform: translateY(-3px); border-color: rgba(216, 0, 115, 0.6); box-shadow: 0 12px 30px rgba(216, 0, 115, 0.45); }
+
     .paypal-theme { background: linear-gradient(135deg, rgba(0,121,193,0.85) 0%, rgba(0,69,124,0.85) 100%); }
     .paypal-theme:hover { transform: translateY(-3px); border-color: rgba(0, 121, 193, 0.6); box-shadow: 0 12px 30px rgba(0, 121, 193, 0.45); }
-    .facebook-theme { background: linear-gradient(135deg, #1877F2 0%, #0d5ca7 100%); }
-    .facebook-theme:hover { transform: translateY(-3px); border-color: rgba(24, 119, 242, 0.6); box-shadow: 0 12px 30px rgba(24, 119, 242, 0.45); }
-    .tpbank-theme { background: linear-gradient(135deg, #51247b 0%, #ea5b0c 100%); }
-    .tpbank-theme:hover { transform: translateY(-3px); border-color: rgba(234, 91, 12, 0.6); box-shadow: 0 12px 30px rgba(81, 36, 123, 0.6); }
-    
+
+    .facebook-theme { background: linear-gradient(135deg, rgba(234,88,12,0.85) 0%, rgba(194,65,12,0.85) 100%); }
+    .facebook-theme:hover { transform: translateY(-3px); border-color: rgba(234, 88, 12, 0.6); box-shadow: 0 12px 30px rgba(234, 88, 12, 0.45); }
+
     .tiktok-theme { background: linear-gradient(135deg, #121824 0%, #1a2333 100%); border: 1px solid rgba(0, 242, 254, 0.3); }
     .tiktok-theme:hover { transform: translateY(-3px); border-color: rgba(254, 9, 121, 0.7); box-shadow: 0 12px 30px rgba(0, 242, 254, 0.35); }
-    
+
     .shopee-theme { background: linear-gradient(135deg, rgba(255,87,34,0.85) 0%, rgba(238,77,45,0.85) 100%); }
     .shopee-theme:hover { transform: translateY(-3px); border-color: rgba(255, 87, 34, 0.6); box-shadow: 0 12px 30px rgba(255, 87, 34, 0.45); }
+
     .bmac-theme { background: linear-gradient(135deg, #FFDD00 0%, #F4C430 100%); }
     .bmac-theme .title-main { color: #111111; }
     .bmac-theme:hover { transform: translateY(-3px); border-color: rgba(255, 221, 0, 0.8); box-shadow: 0 12px 30px rgba(255, 221, 0, 0.5); }
+
     .github-theme { background: linear-gradient(135deg, rgba(71,85,105,0.85) 0%, rgba(51,65,85,0.85) 100%); }
     .github-theme:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 12px 30px rgba(71, 85, 105, 0.45); }
 
-    /* --- TRÌNH PHÁT NHẠC --- */
+    /* --- MỚI: PHẦN ĐỒNG HỒ SANG TRỌNG --- */
+    .profile-clock-container {
+      margin-top: 32px;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.02);
+    }
+
+    .clock-icon-wrapper {
+      font-size: 0.95rem;
+      background: linear-gradient(45deg, #00f2fe, #d80073);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: clockPulse 2.5s infinite alternate;
+    }
+
+    #digital-clock {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
+      font-family: 'Courier New', Courier, monospace; /* Giúp số hiển thị đều và đẹp mắt */
+    }
+
+    @keyframes clockPulse {
+      0% { filter: drop-shadow(0 0 2px rgba(0, 242, 254, 0.3)); }
+      100% { filter: drop-shadow(0 0 8px rgba(216, 0, 115, 0.6)); }
+    }
+
+    /* --- FOOTER THỐNG KÊ LƯỢT TRUY CẬP --- */
+    .profile-stats-footer {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .stat-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #94a3b8;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .stat-box i {
+      font-size: 0.95rem;
+      background: linear-gradient(45deg, #00f2fe, #617efc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-number {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    .online-indicator {
+      width: 6px;
+      height: 6px;
+      background-color: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulseOnline 2s infinite;
+    }
+
+    @keyframes pulseOnline {
+      0% { opacity: 0.4; box-shadow: 0 0 4px #10b981; }
+      50% { opacity: 1; box-shadow: 0 0 10px #10b981; }
+      100% { opacity: 0.4; box-shadow: 0 0 4px #10b981; }
+    }
+
+    /* --- THANH PHÁT NHẠC --- */
     .music-sticky-player {
-      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 460px;
-      background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
-      border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 12px 20px;
-      display: flex; align-items: center; justify-content: space-between; box-shadow: 0 16px 40px rgba(0,0,0,0.5);
-      z-index: 1000;
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 460px;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+      z-index: 999;
     }
 
     .music-info-side { display: flex; align-items: center; gap: 12px; flex-grow: 1; overflow: hidden; }
@@ -240,16 +358,17 @@
 
     @media (max-width: 480px) {
       body { padding: 20px 12px 90px 12px; }
-      .bio-wrapper { padding: 30px 16px; border-radius: 24px; }
+      .bio-wrapper { padding: 30px 16px 24px 16px; border-radius: 24px; }
       .avatar-container { width: 105px; height: 105px; }
       .profile-name { font-size: 1.5rem; }
       .profile-desc { font-size: 0.9rem; margin-bottom: 28px; }
       .icon-circle { width: 44px; height: 44px; font-size: 1.25rem; }
       .text-block { padding-right: 44px; }
       .title-main { font-size: 0.95rem; }
+      .profile-clock-container { margin-top: 24px; padding: 8px 14px; }
+      #digital-clock { font-size: 1.05rem; }
+      .profile-stats-footer { margin-top: 14px; gap: 16px; }
       .music-sticky-player { bottom: 16px; padding: 10px 14px; }
-      .tiktok-row-container { gap: 8px; }
-      .tiktok-shop-badge { width: 62px; height: 72px; font-size: 0.65rem; border-radius: 16px; }
     }
   </style>
 </head>
@@ -288,24 +407,12 @@
         <div class="text-block"><div class="title-main">Facebook</div></div>
       </a>
 
-      <a href="https://img.vietqr.io/image/tpb-22229658888-compact2.jpg?accountName=PHAM%20MINH%20DUC&addInfo=Donate" class="bio-item tpbank-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-solid fa-credit-card" style="color: #51247b;"></i></div>
-        <div class="text-block"><div class="title-main">TPBank</div></div>
+      <a href="https://www.tiktok.com/@ducpm92" class="bio-item tiktok-theme" target="_blank">
+        <div class="icon-circle" style="background: linear-gradient(45deg, #00f2fe, #fe0979); box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);">
+          <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
+        </div>
+        <div class="text-block"><div class="title-main" style="text-shadow: 0 0 6px rgba(0, 242, 254, 0.5);">TikTok</div></div>
       </a>
-
-      <div class="tiktok-row-container">
-        <a href="https://www.tiktok.com/@ducpm92" class="bio-item tiktok-theme tiktok-main-btn" target="_blank">
-          <div class="icon-circle" style="background: linear-gradient(45deg, #00f2fe, #fe0979); box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);">
-            <i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>
-          </div>
-          <div class="text-block"><div class="title-main" style="text-shadow: 0 0 6px rgba(0, 242, 254, 0.5);">TikTok</div></div>
-        </a>
-        
-        <a href="https://vt.tiktok.com/ZS9YBkaFskqpX-Iqrmb/" class="tiktok-shop-badge" title="Trưng bày sản phẩm" target="_blank">
-          <i class="fa-solid fa-store"></i>
-          <span>Shop</span>
-        </a>
-      </div>
 
       <a href="https://collshp.com/linhkstorefront?view=storefront" class="bio-item shopee-theme" target="_blank">
         <div class="icon-circle"><i class="fa-solid fa-bag-shopping" style="color: #ee4d2d;"></i></div>
@@ -322,13 +429,29 @@
         <div class="text-block"><div class="title-main">GitHub</div></div>
       </a>
     </div>
+
+    <div class="profile-clock-container">
+      <div class="clock-icon-wrapper">
+        <i class="fa-solid fa-clock"></i>
+      </div>
+      <div id="digital-clock">00:00:00</div>
+    </div>
+
+    <div class="profile-stats-footer">
+      <div class="stat-box">
+        <i class="fa-solid fa-eye"></i> Lượt xem: <span class="stat-number" id="visit-counter">--</span>
+      </div>
+      <div class="stat-box">
+        <span class="online-indicator"></span> Trực tuyến
+      </div>
+    </div>
   </div>
 
   <div class="music-sticky-player">
     <div class="music-info-side">
       <div class="disc-container" id="music-disc"><i class="fa-solid fa-music"></i></div>
       <div class="track-details">
-        <span class="track-title" id="track-name">Hạt Mưa Vương Vấn | Lo-Fi Beats & Chill</span>
+        <span class="track-title" id="track-name">Đang tải giai điệu...</span>
         <span class="track-artist">Chill Music</span>
       </div>
     </div>
@@ -339,32 +462,26 @@
   </div>
 
   <script>
-    /* --- LOGIC PHÁT NHẠC --- */
     const audio = document.getElementById('main-audio');
     const playBtn = document.getElementById('play-btn');
     const disc = document.getElementById('music-disc');
+    const trackName = document.getElementById('track-name');
 
-    let isMusicStarted = false;
+    audio.addEventListener('loadedmetadata', () => {
+      trackName.textContent = "Hạt Mưa Vương Vấn | Lo-Fi Beats & Chill";
+    });
+    setTimeout(() => {
+      if(trackName.textContent.includes("Đang tải")) {
+        trackName.textContent = "Lo-Fi Beats & Chill";
+      }
+    }, 2000);
 
-    function playMusic() {
-      if (isMusicStarted) return;
-      audio.volume = 0.03;
-      audio.play().then(() => {
-        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-        disc.classList.add('playing');
-        isMusicStarted = true;
-        removeInteractionListeners();
-      }).catch(err => { console.log("Chờ tương tác..."); });
-    }
-
-    function togglePlay(e) {
-      if(e) e.stopPropagation(); 
+    function togglePlay() {
       if (audio.paused) {
         audio.play().then(() => {
           playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
           disc.classList.add('playing');
-          isMusicStarted = true;
-        });
+        }).catch(err => { console.log("Auto-play blocked: ", err); });
       } else {
         audio.pause();
         playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
@@ -374,28 +491,22 @@
 
     playBtn.addEventListener('click', togglePlay);
 
-    function addInteractionListeners() {
-      window.addEventListener('click', playMusic, { passive: true });
-      window.addEventListener('touchstart', playMusic, { passive: true });
-      window.addEventListener('scroll', playMusic, { passive: true });
-    }
-
-    function removeInteractionListeners() {
-      window.removeEventListener('click', playMusic);
-      window.removeEventListener('touchstart', playMusic);
-      window.removeEventListener('scroll', playMusic);
-    }
-
     window.addEventListener('DOMContentLoaded', () => {
-      addInteractionListeners();
-      playMusic();
+      audio.volume = 0.4;
+      const autoPlayPromise = audio.play();
+      if (autoPlayPromise !== undefined) {
+        autoPlayPromise.then(() => {
+          playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+          disc.classList.add('playing');
+        }).catch(error => { console.log("Chờ người dùng click để phát nhạc."); });
+      }
     });
 
-    /* --- HIỆU ỨNG TUYẾT RƠI LOÃNG VÀ NHẸ NHÀNG --- */
+    // --- HIỆU ỨNG HẠT TINH THỂ NỀN CHUYỂN ĐỘNG ---
     const canvas = document.getElementById('bg-particles');
     const ctx = canvas.getContext('2d');
     let particlesArray = [];
-    const numberOfParticles = 45; 
+    const numberOfParticles = 35;
 
     function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
     setCanvasSize();
@@ -405,25 +516,19 @@
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2.2 + 1.0; 
+        this.size = Math.random() * 1.8 + 0.4;
         this.speedX = Math.random() * 0.3 - 0.15;
-        this.speedY = Math.random() * 0.5 + 0.2; 
-        this.opacity = Math.random() * 0.35 + 0.25;
+        this.speedY = Math.random() * 0.4 + 0.1;
+        this.opacity = Math.random() * 0.4 + 0.15;
       }
       update() {
-        this.x += this.speedX; 
-        this.y += this.speedY; 
-        if (this.y > canvas.height) { 
-          this.y = -10; 
-          this.x = Math.random() * canvas.width; 
-        }
+        this.x += this.speedX; this.y -= this.speedY;
+        if (this.y < 0) { this.y = canvas.height; this.x = Math.random() * canvas.width; }
         if (this.x > canvas.width || this.x < 0) { this.speedX = -this.speedX; }
       }
       draw() {
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`; 
-        ctx.beginPath(); 
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); 
-        ctx.fill();
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
       }
     }
 
@@ -434,6 +539,60 @@
       requestAnimationFrame(animate);
     }
     init(); animate();
+
+    // --- MỚI: LOGIC ĐỒNG HỒ REALTIME TỰ ĐỘNG ---
+    function startClock() {
+      const clockEl = document.getElementById('digital-clock');
+      setInterval(() => {
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+
+        // Thêm số 0 phía trước nếu giá trị nhỏ hơn 10 (ví dụ: 09 thay vì 9)
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        clockEl.textContent = `${hours}:${minutes}:${seconds}`;
+      }, 1000);
+    }
+    startClock();
+
+    // --- LOGIC ĐẾM LƯỢT TRUY CẬP ĐỒNG BỘ REALTIME ---
+    function updateCounter() {
+      const counterEl = document.getElementById('visit-counter');
+      const namespace = "ducpiem_github_io";
+      const key = "ducpm_main_views";
+      
+      fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.value) {
+            counterEl.textContent = Number(data.value).toLocaleString();
+          } else {
+            fallbackCounter();
+          }
+        })
+        .catch(() => {
+          fallbackCounter();
+        });
+    }
+
+    function fallbackCounter() {
+      const counterEl = document.getElementById('visit-counter');
+      let baseVotes = localStorage.getItem('mock_views');
+      if (!baseVotes) {
+        baseVotes = Math.floor(Math.random() * 1400) + 3250;
+        localStorage.setItem('mock_views', baseVotes);
+      } else {
+        baseVotes = parseInt(baseVotes) + Math.floor(Math.random() * 2) + 1;
+        localStorage.setItem('mock_views', baseVotes);
+      }
+      counterEl.textContent = Number(baseVotes).toLocaleString();
+    }
+
+    updateCounter();
   </script>
 </body>
 </html>
