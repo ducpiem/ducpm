@@ -36,6 +36,16 @@
       position: relative;
       overflow-x: hidden;
     }
+    /* --- CANVAS CHỨA HIỆU ỨNG NỀN & BỤI SAO --- */
+    #bg-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
     /* --- HIỆU ỨNG LIQUID NỀN CHUYỂN ĐỘNG --- */
     .liquid-bg-container {
       position: fixed;
@@ -58,21 +68,14 @@
     .blob-1 { width: 450px; height: 450px; background: radial-gradient(circle, #4f46e5 0%, rgba(0,0,0,0) 70%); top: -10%; left: -10%; animation-duration: 20s; }
     .blob-2 { width: 500px; height: 500px; background: radial-gradient(circle, #ec4899 0%, rgba(0,0,0,0) 70%); bottom: -15%; right: -10%; animation-duration: 28s; }
     .blob-3 { width: 380px; height: 380px; background: radial-gradient(circle, #00f2fe 0%, rgba(0,0,0,0) 70%); top: 40%; left: 50%; transform: translate(-50%, -50%); animation-duration: 24s; }
+    
     @keyframes floatFluid {
       0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
       33% { transform: translate(40px, -60px) scale(1.1) rotate(120deg); }
       66% { transform: translate(-30px, 30px) scale(0.9) rotate(240deg); }
       100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }
     }
-    #bg-particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      pointer-events: none;
-    }
+    
     /* --- KHUNG MENU TỐI TRONG SUỐT --- */
     .bio-wrapper {
       width: 100%;
@@ -86,7 +89,7 @@
       text-align: center;
       box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.1);
       position: relative;
-      z-index: 1;
+      z-index: 3;
     }
     .avatar-container {
       position: relative;
@@ -116,6 +119,7 @@
     .tiktok-shop-badge { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 72px; height: 78px; border-radius: 20px; text-decoration: none; background: linear-gradient(135deg, #00f2fe 0%, #fe0979 100%); color: #ffffff; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; box-shadow: 0 0 15px rgba(0, 242, 254, 0.5); transition: all 0.3s ease; position: relative; animation: neonPulse 2s infinite ease-in-out; }
     .tiktok-shop-badge i { font-size: 1.3rem; margin-bottom: 4px; }
     .tiktok-shop-badge:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 0 25px rgba(254, 9, 121, 0.8); }
+    
     @keyframes neonPulse {
       0% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 4px rgba(254, 9, 121, 0.3); }
       50% { box-shadow: 0 0 22px rgba(0, 242, 254, 0.8), 0 0 12px rgba(254, 9, 121, 0.6); transform: scale(1.02); }
@@ -127,22 +131,29 @@
     .text-block { flex-grow: 1; padding-right: 52px; text-align: center; }
     .title-main { font-size: 1.05rem; font-weight: 600; color: #ffffff; }
     
-    /* --- THEMES NÚT --- */
+    /* --- THEMES NÚT MÀU SẮC --- */
     .momo-theme { background: linear-gradient(135deg, rgba(216,0,115,0.85) 0%, rgba(165,0,100,0.85) 100%); }
     .momo-theme:hover { transform: translateY(-3px); border-color: rgba(216, 0, 115, 0.6); box-shadow: 0 12px 30px rgba(216, 0, 115, 0.45); }
-    .paypal-theme { background: linear-gradient(135deg, rgba(0,121,193,0.85) 0%, rgba(0,69,124,0.85) 100%); }
-    .paypal-theme:hover { transform: translateY(-3px); border-color: rgba(0, 121, 193, 0.6); box-shadow: 0 12px 30px rgba(0, 121, 193, 0.45); }
-    .facebook-theme { background: linear-gradient(135deg, #1877F2 0%, #0d5ca7 100%); }
-    .facebook-theme:hover { transform: translateY(-3px); border-color: rgba(24, 119, 242, 0.6); box-shadow: 0 12px 30px rgba(24, 119, 242, 0.45); }
+    
     .tpbank-theme { background: linear-gradient(135deg, #51247b 0%, #ea5b0c 100%); }
     .tpbank-theme:hover { transform: translateY(-3px); border-color: rgba(234, 91, 12, 0.6); box-shadow: 0 12px 30px rgba(81, 36, 123, 0.6); } 
+    
     .tiktok-theme { background: linear-gradient(135deg, #121824 0%, #1a2333 100%); border: 1px solid rgba(0, 242, 254, 0.3); }
     .tiktok-theme:hover { transform: translateY(-3px); border-color: rgba(254, 9, 121, 0.7); box-shadow: 0 12px 30px rgba(0, 242, 254, 0.35); } 
+    
+    .paypal-theme { background: linear-gradient(135deg, rgba(0,121,193,0.85) 0%, rgba(0,69,124,0.85) 100%); }
+    .paypal-theme:hover { transform: translateY(-3px); border-color: rgba(0, 121, 193, 0.6); box-shadow: 0 12px 30px rgba(0, 121, 193, 0.45); }
+    
+    .facebook-theme { background: linear-gradient(135deg, #1877F2 0%, #0d5ca7 100%); }
+    .facebook-theme:hover { transform: translateY(-3px); border-color: rgba(24, 119, 242, 0.6); box-shadow: 0 12px 30px rgba(24, 119, 242, 0.45); }
+    
     .shopee-theme { background: linear-gradient(135deg, rgba(255,87,34,0.85) 0%, rgba(238,77,45,0.85) 100%); }
     .shopee-theme:hover { transform: translateY(-3px); border-color: rgba(255, 87, 34, 0.6); box-shadow: 0 12px 30px rgba(255, 87, 34, 0.45); }
+    
     .bmac-theme { background: linear-gradient(135deg, #FFDD00 0%, #F4C430 100%); }
     .bmac-theme .title-main { color: #111111; }
     .bmac-theme:hover { transform: translateY(-3px); border-color: rgba(255, 221, 0, 0.8); box-shadow: 0 12px 30px rgba(255, 221, 0, 0.5); }
+    
     .github-theme { background: linear-gradient(135deg, rgba(71,85,105,0.85) 0%, rgba(51,65,85,0.85) 100%); }
     .github-theme:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 12px 30px rgba(71, 85, 105, 0.45); }
     
@@ -347,16 +358,22 @@
       document.getElementById('visit-counter').textContent = visits;
     }
 
-    /* --- HIỆU ỨNG TUYẾT RƠI LOÃNG VÀ NHẸ NHÀNG --- */
+    /* --- CANVAS: HIỆU ỨNG TUYẾT RƠI & BỤI SAO CHỔI --- */
     const canvas = document.getElementById('bg-particles');
     const ctx = canvas.getContext('2d');
-    let particlesArray = [];
-    const numberOfParticles = 45;
     
-    function setCanvasSize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    let particlesArray = [];      // Chứa các hạt tuyết rơi nền
+    let cometDustArray = [];      // Chứa bụi sao chổi sinh ra từ chuột
+    const numberOfParticles = 45; // Số lượng tuyết rơi
+    
+    function setCanvasSize() { 
+      canvas.width = window.innerWidth; 
+      canvas.height = window.innerHeight; 
+    }
     setCanvasSize();
     window.addEventListener('resize', setCanvasSize);
     
+    /* Lớp đối tượng Tuyết nền */
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -383,14 +400,75 @@
       }
     }
     
+    /* Lớp đối tượng Bụi sao chổi đuôi chuột */
+    class CometDust {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 2.5 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.6;
+        this.speedY = Math.random() * 0.5 + 0.4;
+        this.opacity = 1;
+        this.fadeSpeed = Math.random() * 0.015 + 0.015;
+        this.colorType = Math.random();
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.opacity -= this.fadeSpeed;
+      }
+      draw() {
+        let color = `rgba(255, 255, 255, ${this.opacity})`;
+        if (this.colorType < 0.4) {
+          color = `rgba(0, 242, 254, ${this.opacity})`; 
+        } else if (this.colorType < 0.7) {
+          color = `rgba(254, 9, 121, ${this.opacity})`; 
+        }
+        
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    
     function init() { 
       for (let i = 0; i < numberOfParticles; i++) { particlesArray.push(new Particle()); } 
     }
+    
+    window.addEventListener('mousemove', (e) => {
+      for (let i = 0; i < 2; i++) {
+        cometDustArray.push(new CometDust(e.clientX, e.clientY));
+      }
+    });
+    
+    window.addEventListener('touchmove', (e) => {
+      if(e.touches.length > 0) {
+        for (let i = 0; i < 2; i++) {
+          cometDustArray.push(new CometDust(e.touches[0].clientX, e.touches[0].clientY));
+        }
+      }
+    }, { passive: true });
+    
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); particlesArray[i].draw(); }
+      
+      for (let i = 0; i < particlesArray.length; i++) { 
+        particlesArray[i].update(); 
+        particlesArray[i].draw(); 
+      }
+      
+      for (let i = 0; i < cometDustArray.length; i++) {
+        cometDustArray[i].update();
+        cometDustArray[i].draw();
+        if (cometDustArray[i].opacity <= 0) {
+          cometDustArray.splice(i, 1);
+          i--;
+        }
+      }
       requestAnimationFrame(animate);
     }
+    
     init(); 
     animate();
   </script>
