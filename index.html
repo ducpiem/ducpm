@@ -32,7 +32,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 40px 20px 100px 20px;
+      padding: 40px 20px 120px 20px;
       position: relative;
       overflow-x: hidden;
     }
@@ -126,7 +126,7 @@
       100% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 4px rgba(254, 9, 121, 0.3); }
     }
     
-    /* --- HIỆU ỨNG XOAY VÀ SÁNG BẬP BÙNG CHO ICON (MỚI THÊM) --- */
+    /* --- HIỆU ỨNG XOAY VÀ SÁNG BẬP BÙNG CHO ICON --- */
     .icon-circle { 
       width: 52px; 
       height: 52px; 
@@ -138,15 +138,11 @@
       font-size: 1.5rem; 
       flex-shrink: 0; 
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
-      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease; /* Tăng thời gian mượt mà */
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
     }
-    
-    /* Khi rà chuột vào menu: Icon vừa xoay tròn 360 độ vừa kích hoạt hiệu ứng bập bùng */
     .bio-item:hover .icon-circle { 
       animation: iconGlowPulse 1.5s infinite ease-in-out alternate;
     }
-    
-    /* Animation làm phát sáng nhẹ và co giãn bập bùng */
     @keyframes iconGlowPulse {
       0% {
         transform: rotate(360deg) scale(1.0);
@@ -187,22 +183,24 @@
     .github-theme { background: linear-gradient(135deg, rgba(71,85,105,0.85) 0%, rgba(51,65,85,0.85) 100%); }
     .github-theme:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 12px 30px rgba(71, 85, 105, 0.45); }
     
-    /* --- TRÌNH PHÁT NHẠC --- */
-    .music-sticky-player { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 460px; background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 16px 40px rgba(0,0,0,0.5); z-index: 1000; }
+    /* --- TRÌNH PHÁT NHẠC NÂNG CẤP CÓ NÚT NEXT/PREV --- */
+    .music-sticky-player { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); max-width: 480px; background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 16px 40px rgba(0,0,0,0.5); z-index: 1000; }
     .music-info-side { display: flex; align-items: center; gap: 12px; flex-grow: 1; overflow: hidden; }
-    .disc-container { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg, #fe0979, #00f2fe); display: flex; align-items: center; justify-content: center; animation: spinDisc 4s linear infinite; animation-play-state: paused; }
+    .disc-container { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(45deg, #fe0979, #00f2fe); display: flex; align-items: center; justify-content: center; animation: spinDisc 4s linear infinite; animation-play-state: paused; flex-shrink: 0; }
     .disc-container.playing { animation-play-state: running; }
     .disc-container i { color: #ffffff; font-size: 1.1rem; }
-    .track-details { display: flex; flex-direction: column; overflow: hidden; }
+    .track-details { display: flex; flex-direction: column; overflow: hidden; padding-right: 10px; }
     .track-title { font-size: 0.9rem; font-weight: 600; color: #ffffff; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-    .track-artist { font-size: 0.75rem; color: #94a3b8; }
-    .music-controls-side { display: flex; align-items: center; gap: 16px; }
-    .btn-play-pause { width: 36px; height: 36px; border-radius: 50%; border: none; background: #ffffff; color: #0f172a; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease; }
+    .track-artist { font-size: 0.75rem; color: #94a3b8; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+    .music-controls-side { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .btn-nav-music { background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 0.95rem; transition: color 0.2s ease; padding: 4px; }
+    .btn-nav-music:hover { color: #ffffff; }
+    .btn-play-pause { width: 38px; height: 38px; border-radius: 50%; border: none; background: #ffffff; color: #0f172a; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease; }
     .btn-play-pause:hover { transform: scale(1.08); background: #00f2fe; }
     @keyframes spinDisc { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     
     @media (max-width: 480px) {
-      body { padding: 20px 12px 90px 12px; }
+      body { padding: 20px 12px 100px 12px; }
       .bio-wrapper { padding: 30px 16px; border-radius: 24px; }
       .avatar-container { width: 105px; height: 105px; }
       .profile-name { font-size: 1.5rem; }
@@ -252,6 +250,16 @@
         <div class="text-block"><div class="title-main">Momo</div></div>
       </a>
       
+      <a href="https://www.paypal.me/ducthanhdbp" class="bio-item paypal-theme" target="_blank">
+        <div class="icon-circle"><i class="fa-brands fa-paypal" style="color: #00457c;"></i></div>
+        <div class="text-block"><div class="title-main">PayPal</div></div>
+      </a>
+      
+      <a href="https://fb.com/ducpmmk" class="bio-item facebook-theme" target="_blank">
+        <div class="icon-circle"><i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i></div>
+        <div class="text-block"><div class="title-main">Facebook</div></div>
+      </a>
+      
       <a href="https://img.vietqr.io/image/tpb-22229658888-compact2.jpg?accountName=PHAM%20MINH%20DUC&addInfo=Donate" class="bio-item tpbank-theme" target="_blank">
         <div class="icon-circle"><i class="fa-solid fa-credit-card" style="color: #51247b;"></i></div>
         <div class="text-block"><div class="title-main">TPBank</div></div>
@@ -269,16 +277,6 @@
           <span>Shop</span>
         </a>
       </div>
-      
-      <a href="https://www.paypal.me/ducthanhdbp" class="bio-item paypal-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-brands fa-paypal" style="color: #00457c;"></i></div>
-        <div class="text-block"><div class="title-main">PayPal</div></div>
-      </a>
-      
-      <a href="https://fb.com/ducpmmk" class="bio-item facebook-theme" target="_blank">
-        <div class="icon-circle"><i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i></div>
-        <div class="text-block"><div class="title-main">Facebook</div></div>
-      </a>
       
       <a href="https://collshp.com/linhkstorefront?view=storefront" class="bio-item shopee-theme" target="_blank">
         <div class="icon-circle"><i class="fa-solid fa-bag-shopping" style="color: #ee4d2d;"></i></div>
@@ -301,32 +299,75 @@
     <div class="music-info-side">
       <div class="disc-container" id="music-disc"><i class="fa-solid fa-music"></i></div>
       <div class="track-details">
-        <span class="track-title" id="track-name">Hạt Mưa Vương Vấn | Lo-Fi Beats & Chill</span>
-        <span class="track-artist">Chill Music</span>
+        <span class="track-title" id="track-name">Đang tải album...</span>
+        <span class="track-artist" id="track-artist">Mời bạn click màn hình</span>
       </div>
     </div>
     <div class="music-controls-side">
-      <button class="btn-play-pause" id="play-btn" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
+      <button class="btn-nav-music" id="prev-btn" title="Bài trước"><i class="fa-solid fa-backward"></i></button>
+      <button class="btn-play-pause" id="play-btn" title="Phát/Tạm dừng"><i class="fa-solid fa-play"></i></button>
+      <button class="btn-nav-music" id="next-btn" title="Bài tiếp theo"><i class="fa-solid fa-forward"></i></button>
     </div>
-    <audio id="main-audio" src="https://stream.nixcdn.com/resa/2601/bd/c8/gtmqjhy2qb.flac?st=ekk41tPq3cusS5Fv-8aQ1g&e=1779319064&download=true" loop></audio>
+    <audio id="main-audio"></audio>
   </div>
   
   <script>
-    /* --- LOGIC PHÁT NHẠC --- */
+    /* --- ALBUM PLAYLIST ĐƯỢC ĐỒNG BỘ TỪ CHART NHACCUATUI GỐC --- */
+    const playlist = [
+      {
+        name: "Hạt Mưa Vương Vấn (Lofi)",
+        artist: "Chill Music",
+        src: "https://stream.nixcdn.com/resa/2601/bd/c8/gtmqjhy2qb.flac?st=ekk41tPq3cusS5Fv-8aQ1g&e=1779319064&download=true"
+      },
+      {
+        name: "Khóa Ly Biệt",
+        artist: "Anh Tú (Voi Bản Đôn)",
+        src: "https://data3.chiasenhac.com/downloads/2208/2/2207907-59b4334f/128/Khoa%20Ly%20Biet%20-%20Anh%20Tu.mp3"
+      },
+      {
+        name: "Ngày Mai Người Ta Lấy Chồng",
+        artist: "Thành Đạt",
+        src: "https://data.chiasenhac.com/downloads/2204/2/2203612-426b38c2/128/Ngay%20Mai%20Nguoi%20Ta%20Lay%20Chong%20-%20Thanh%20Dat.mp3"
+      },
+      {
+        name: "Cắt Đôi Nỗi Sầu",
+        artist: "Tăng Duy Tân",
+        src: "https://data.chiasenhac.com/downloads/2213/2/2212267-93ae3b95/128/Cat%20Doi%20Noi%20Sau%20-%20Tang%20Duy%20Tan.mp3"
+      },
+      {
+        name: "Lệ Lưu Ly",
+        artist: "Vũ Phụng Tiên x DT Tập Rap",
+        src: "https://data.chiasenhac.com/downloads/2212/2/2211993-9c864d4b/128/Le%20Luu%20Ly%20-%20Vu%20Phung%20Tien_%20DT%20Tap%20Rap.mp3"
+      }
+    ];
+
+    let currentTrackIndex = 0;
     const audio = document.getElementById('main-audio');
     const playBtn = document.getElementById('play-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
     const disc = document.getElementById('music-disc');
+    const trackNameEl = document.getElementById('track-name');
+    const trackArtistEl = document.getElementById('track-artist');
     let isMusicStarted = false;
     
+    // Hàm nạp bài hát hiện tại lên trình phát
+    function loadTrack(index) {
+      const track = playlist[index];
+      audio.src = track.src;
+      trackNameEl.textContent = track.name;
+      trackArtistEl.textContent = track.artist;
+    }
+
     function playMusic() {
       if (isMusicStarted) return;
-      audio.volume = 0.03;
+      audio.volume = 0.05;
       audio.play().then(() => {
         playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
         disc.classList.add('playing');
         isMusicStarted = true;
         removeInteractionListeners();
-      }).catch(err => { console.log("Chờ tương tác..."); });
+      }).catch(err => { console.log("Chờ người dùng tương tác để tự phát album..."); });
     }
     
     function togglePlay(e) {
@@ -343,7 +384,38 @@
         disc.classList.remove('playing');
       }
     }
+
+    function nextTrack(e) {
+      if(e) e.stopPropagation();
+      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+      loadTrack(currentTrackIndex);
+      audio.play().then(() => {
+        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        disc.classList.add('playing');
+        isMusicStarted = true;
+      });
+    }
+
+    function prevTrack(e) {
+      if(e) e.stopPropagation();
+      currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+      loadTrack(currentTrackIndex);
+      audio.play().then(() => {
+        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        disc.classList.add('playing');
+        isMusicStarted = true;
+      });
+    }
+
+    /* ĐĂNG KÝ SỰ KIỆN ĐIỀU KHIỂN */
     playBtn.addEventListener('click', togglePlay);
+    nextBtn.addEventListener('click', nextTrack);
+    prevBtn.addEventListener('click', prevTrack);
+    
+    // TỰ ĐỘNG CHUYỂN BÀI KHI BÀI CŨ KẾT THÚC (AUTO NEXT ALBUM)
+    audio.addEventListener('ended', () => {
+      nextTrack(null);
+    });
     
     function addInteractionListeners() {
       window.addEventListener('click', playMusic, { passive: true });
@@ -358,6 +430,7 @@
     }
     
     window.addEventListener('DOMContentLoaded', () => {
+      loadTrack(currentTrackIndex); // Nạp bài đầu tiên
       addInteractionListeners();
       playMusic();
       
